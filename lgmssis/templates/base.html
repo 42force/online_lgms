@@ -11,13 +11,13 @@
   <title>LGMS - </title>
   <!-- Reset CSS -->
   {% load static %}
-  <link href="{% static " lgmssis/css/reset.css" %}" rel="stylesheet">
+  <link href="{% static "lgmssis/css/reset.css" %}" rel="stylesheet">
   <!-- Custom Fonts -->
   {% load static %}
-  <link href="{% static " lgmssis/css/fonts.css" %}" rel="stylesheet">
+  <link href="{% static "lgmssis/css/fonts.css" %}" rel="stylesheet">
   <!-- Bootstrap -->
   {% load static %}
-  <link href="{% static " lgmssis/assets/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "lgmssis/assets/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
   <!-- Select2 -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
   <!-- <link href="assets/select2/css/select2.min.css" rel="stylesheet"> -->
@@ -27,10 +27,10 @@
   <!-- <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
   <!-- Magnific Popup -->
   {% load static %}
-  <link href="{%static " lgmssis/assets/magnific-popup/css/magnific-popup.css" %}" rel="stylesheet">
+  <link href="{%static "lgmssis/assets/magnific-popup/css/magnific-popup.css" %}" rel="stylesheet">
   <!-- Iconmoon -->
   {% load static %}
-  <link href="{%static " lgmssis/assets/iconmoon/css/iconmoon.css" %}" rel="stylesheet">
+  <link href="{%static "lgmssis/assets/iconmoon/css/iconmoon.css" %}" rel="stylesheet">
   <!-- Iconmoon -->
   <!-- bxslider css -->
   <!-- <link rel="stylesheet" href="css/jquery.bxslider.css"> -->
@@ -40,12 +40,12 @@
   <!-- <link href="assets/owl-carousel/css/owl.carousel.min.css" rel="stylesheet"> -->
   <!-- Owl Carousel below is the one i inserted-->
   {% load static %}
-  <link rel="stylesheet" href="{%static " lgmssis/owlcarousel/owl.carousel.min.css"%}"> {% load static %} <link rel="stylesheet" href="{%static " lgmssis/owlcarousel/owl.theme.default.min.css"%}"> <!-- Animate -->
+  <link rel="stylesheet" href="{%static "lgmssis/owlcarousel/owl.carousel.min.css"%}"> {% load static %} <link rel="stylesheet" href="{%static " lgmssis/owlcarousel/owl.theme.default.min.css"%}"> <!-- Animate -->
   {% load static %}
-  <link href="{%static " lgmssis/css/animate.css"%}" rel="stylesheet">
+  <link href="{%static "lgmssis/css/animate.css"%}" rel="stylesheet">
   <!-- Custom Style -->
   {% load static %}
-  <link href="{%static " lgmssis/css/custom.css"%}" rel="stylesheet">
+  <link href="{%static "lgmssis/css/custom.css"%}" rel="stylesheet">
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
         <script src="js/html5shiv.min.js"></script>
@@ -112,7 +112,7 @@
     <!-- End Header top Bar -->
     <!-- Start Header Middle -->
     <div class="container header-middle">
-      <div class="row"> <span class="col-xs-6 col-sm-3"><a href="index.html"><img src="{%static " lgmssis/images/lgms_smal.jpg"%}" class="img-responsive" alt=""></a></span>
+      <div class="row"> <span class="col-xs-6 col-sm-3"><a href="index.html"><img src="{%static "lgmssis/images/lgms_smal.jpg"%}" class="img-responsive" alt=""></a></span>
         <div class="col-xs-6 col-sm-3"></div>
         <div class="col-xs-6 col-sm-9">
           <div class="contact clearfix">
@@ -212,20 +212,22 @@
   </div>
   <!-- End Banner Carousel -->
   <!-- this is for index html -->
+  {% block content %}
+  {% endblock %}
   <!-- end of index html -->
   <!-- Start logos Section -->
   {% load static %}
   <section class="logos">
     <div class="container">
       <ul class="owl-carousel clearfix">
-        <li><a href="#"><img src="{% static " lgmssis/images/sped.jpeg"%}" class="img-responsive" alt=""></a></li>
-        <li><a href="#"><img src="{% static " lgmssis/images/redcross.png"%}" class="img-responsive" alt=""></a></li>
-        <li><a href="#"><img src="{% static " lgmssis/images/firelogo.jpg"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static "lgmssis/images/sped.jpeg"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static "lgmssis/images/redcross.png"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static "lgmssis/images/firelogo.jpg"%}" class="img-responsive" alt=""></a></li>
         {% load static %}
-        <li><a href="#"><img src="{% static " lgmssis/images/logodeped.png"%}" class="img-responsive" alt=""></a></li>
-        <li><a href="#"><img src="{% static " lgmssis/images/autism.jpeg"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static "lgmssis/images/logodeped.png"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static "lgmssis/images/autism.jpeg"%}" class="img-responsive" alt=""></a></li>
         {% load static %}
-        <li><a href="#"><img src="{% static " lgmssis/images/lgms.png"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static "lgmssis/images/lgms.png"%}" class="img-responsive" alt=""></a></li>
       </ul>
     </div>
   </section>
@@ -250,8 +252,8 @@
             <span>Thomas, <span>London</span></span>
           </li>
         </ul>
-        <div id="bx-pager"> <a data-slide-index="0" href=""><img src="{% static " lgmssis/images/testimonial-thumb1.jpg"%}" class="img-circle" alt="" /></a> <a data-slide-index="1" href=""><img src="{% static " lgmssis/images/testimonial-thumb2.jpg"
-              %}" class="img-circle" alt="" /></a> <a data-slide-index="2" href=""><img src="{%static " lgmssis/images/testimonial-thumb3.jpg"%}" class="img-circle" alt="" /></a> </div>
+        <div id="bx-pager"> <a data-slide-index="0" href=""><img src="{% static "lgmssis/images/testimonial-thumb1.jpg"%}" class="img-circle" alt="" /></a> <a data-slide-index="1" href=""><img src="{% static "lgmssis/images/testimonial-thumb2.jpg"
+              %}" class="img-circle" alt="" /></a> <a data-slide-index="2" href=""><img src="{%static "lgmssis/images/testimonial-thumb3.jpg"%}" class="img-circle" alt="" /></a> </div>
       </div>
     </div>
   </section>
@@ -305,7 +307,7 @@
           </div>
         </div>
         <div class="col-sm-3">
-          <div class="footer-logo hidden-xs"><a href="index.html"><img src="{% static " lgmssis/images/lgms_smal.jpg"%}" class="img-responsive" alt=""></a></div>
+          <div class="footer-logo hidden-xs"><a href="index.html"><img src="{% static "lgmssis/images/lgms_smal.jpg"%}" class="img-responsive" alt=""></a></div>
           <p>© 2019 <span>LGMS</span>. All rights reserved</p>
           <ul class="terms clearfix">
             <li><a href="terms.html">TERMS OF USE</a></li>
@@ -359,22 +361,22 @@
               <h3>@INSTAGRAM</h3>
               <ul class="clearfix">
                 <li><a href="#">
-                    <figure><img src="{% static " lgmssis/images/insta-img1.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static "lgmssis/images/insta-img1.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
                 <li><a href="#">
-                    <figure><img src="{% static " lgmssis/images/insta-img2.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static "lgmssis/images/insta-img2.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
                 <li><a href="#">
-                    <figure><img src="{% static " lgmssis/images/insta-img3.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static "lgmssis/images/insta-img3.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
                 <li><a href="#">
-                    <figure><img src="{% static " lgmssis/images/insta-img4.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static "lgmssis/images/insta-img4.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
                 <li><a href="#">
-                    <figure><img src="{% static " lgmssis/images/insta-img5.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static "lgmssis/images/insta-img5.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
                 <li><a href="#">
-                    <figure><img src="{% static " lgmssis/images/insta-img6.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static "lgmssis/images/insta-img6.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
               </ul>
             </div>
@@ -391,7 +393,7 @@
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   {% load static %}
-  <script src="{% static " lgmssis/js/jquery.min.js" %}"></script>
+  <script src="{% static "lgmssis/js/jquery.min.js" %}"></script>
   <!-- Bootsrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
@@ -403,7 +405,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   <!-- Match Height JS -->
   {% load static %}
-  <script src="{% static " lgmssis/assets/matchHeight/js/matchHeight-min.js" %}"></script>
+  <script src="{% static "lgmssis/assets/matchHeight/js/matchHeight-min.js" %}"></script>
   <!-- Bxslider JS -->
 
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -412,21 +414,21 @@
   <! Counter Up JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
   {% load static %}
-  <script src="{% static " lgmssis/assets/counterup/js/counterup.min.js" %}"></script>
+  <script src="{% static "lgmssis/assets/counterup/js/counterup.min.js" %}"></script>
   <!-- Magnific Popup JS -->
   {% load static %}
-  <script src="{% static " lgmssis/assets/magnific-popup/js/magnific-popup.min.js" %}"></script>
+  <script src="{% static "lgmssis/assets/magnific-popup/js/magnific-popup.min.js" %}"></script>
   <!-- Owl Carousal JS -->
   <!-- <script src="{%static "assets/owl-carousel/js/owl.carousel.min.js"%}"></script> -->
   <!-- <script src="{%static "jquery.min.js"%}"></script> -->
   {% load static %}
-  <script src="{% static " lgmssis/owlcarousel/owl.carousel.min.js" %}"></script>
+  <script src="{% static "lgmssis/owlcarousel/owl.carousel.min.js" %}"></script>
   <!-- Modernizr JS -->
   {% load static %}
-  <script src="{% static " lgmssis/js/modernizr.custom.js" %}"></script>
+  <script src="{% static "lgmssis/js/modernizr.custom.js" %}"></script>
   <!-- Custom JS -->
   {% load static %}
-  <script src="{% static " lgmssis/js/custom.js" %}"></script>
+  <script src="{% static "lgmssis/js/custom.js" %}"></script>
   <!-- this is my injected from the net my corrections -wgmbg -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
