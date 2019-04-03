@@ -11,13 +11,13 @@
   <title>LGMS - Educational Template</title>
   <!-- Reset CSS -->
   {% load static %}
-  <link href="{% static "lgmssis/css/reset.css" %}" rel="stylesheet">
+  <link href="{% static " lgmssis/css/reset.css" %}" rel="stylesheet">
   <!-- Custom Fonts -->
-    {% load static %}
-  <link href="{% static "lgmssis/css/fonts.css" %}" rel="stylesheet">
+  {% load static %}
+  <link href="{% static " lgmssis/css/fonts.css" %}" rel="stylesheet">
   <!-- Bootstrap -->
-    {% load static %}
-  <link href="{% static "lgmssis/assets/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+  {% load static %}
+  <link href="{% static " lgmssis/assets/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
   <!-- Select2 -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
   <!-- <link href="assets/select2/css/select2.min.css" rel="stylesheet"> -->
@@ -26,11 +26,11 @@
   <!-- <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"> -->
   <!-- <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
   <!-- Magnific Popup -->
-    {% load static %}
-  <link href="{%static "lgmssis/assets/magnific-popup/css/magnific-popup.css" %}" rel="stylesheet">
+  {% load static %}
+  <link href="{%static " lgmssis/assets/magnific-popup/css/magnific-popup.css" %}" rel="stylesheet">
   <!-- Iconmoon -->
-    {% load static %}
-  <link href="{%static "lgmssis/assets/iconmoon/css/iconmoon.css" %}" rel="stylesheet">
+  {% load static %}
+  <link href="{%static " lgmssis/assets/iconmoon/css/iconmoon.css" %}" rel="stylesheet">
   <!-- Iconmoon -->
   <!-- bxslider css -->
   <!-- <link rel="stylesheet" href="css/jquery.bxslider.css"> -->
@@ -39,16 +39,13 @@
   <!-- Owl Carousel -->
   <!-- <link href="assets/owl-carousel/css/owl.carousel.min.css" rel="stylesheet"> -->
   <!-- Owl Carousel below is the one i inserted-->
-{% load static %}
-  <link rel="stylesheet" href="{%static "lgmssis/owlcarousel/owl.carousel.min.css"%}">
-{% load static %}
-  <link rel="stylesheet" href="{%static "lgmssis/owlcarousel/owl.theme.default.min.css"%}">
-  <!-- Animate -->
-{% load static %}
-  <link href="{%static "lgmssis/css/animate.css"%}" rel="stylesheet">
+  {% load static %}
+  <link rel="stylesheet" href="{%static " lgmssis/owlcarousel/owl.carousel.min.css"%}"> {% load static %} <link rel="stylesheet" href="{%static " lgmssis/owlcarousel/owl.theme.default.min.css"%}"> <!-- Animate -->
+  {% load static %}
+  <link href="{%static " lgmssis/css/animate.css"%}" rel="stylesheet">
   <!-- Custom Style -->
-{% load static %}
-  <link href="{%static "lgmssis/css/custom.css"%}" rel="stylesheet">
+  {% load static %}
+  <link href="{%static " lgmssis/css/custom.css"%}" rel="stylesheet">
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
         <script src="js/html5shiv.min.js"></script>
@@ -115,7 +112,7 @@
     <!-- End Header top Bar -->
     <!-- Start Header Middle -->
     <div class="container header-middle">
-      <div class="row"> <span class="col-xs-6 col-sm-3"><a href="index.html"><img src="{%static "lgmssis/images/lgms_smal.jpg"%}" class="img-responsive" alt=""></a></span>
+      <div class="row"> <span class="col-xs-6 col-sm-3"><a href="index.html"><img src="{%static " lgmssis/images/lgms_smal.jpg"%}" class="img-responsive" alt=""></a></span>
         <div class="col-xs-6 col-sm-3"></div>
         <div class="col-xs-6 col-sm-9">
           <div class="contact clearfix">
@@ -220,7 +217,7 @@
     <div class="container">
       <ul class="row our-links">
         <li class="col-sm-4 apply-online clearfix equal-hight">
-          <div class="icon"><img src="{%static "lgmssis/images/apply-online-ico.png"%}" class="img-responsive" alt=""></div>
+          <div class="icon"><img src="{%static " lgmssis/images/apply-online-ico.png"%}" class="img-responsive" alt=""></div>
           <div class="detail">
             <h3>Apply Online</h3>
             <p>Lorem Ipsum is simply dummy text of the printing...</p>
@@ -228,7 +225,7 @@
           </div>
         </li>
         <li class="col-sm-4 prospects clearfix equal-hight">
-          <div class="icon"><img src="{%static "lgmssis/images/prospects-ico.png"%}" class="img-responsive" alt=""></div>
+          <div class="icon"><img src="{%static " lgmssis/images/prospects-ico.png"%}" class="img-responsive" alt=""></div>
           <div class="detail">
             <h3><span>Download</span>Prospects</h3>
             <p>Lorem Ipsum is simply dummy text of the printing...</p>
@@ -236,7 +233,7 @@
           </div>
         </li>
         <li class="col-sm-4 certification clearfix equal-hight">
-          <div class="icon"><img src="{%static "lgmssis/images/certification-ico.png"%}" class="img-responsive" alt=""></div>
+          <div class="icon"><img src="{%static " lgmssis/images/certification-ico.png"%}" class="img-responsive" alt=""></div>
           <div class="detail">
             <h3>Certification</h3>
             <p>Lorem Ipsum is simply dummy text of the printing...</p>
@@ -256,15 +253,17 @@
         {% load static %}
         <div class="col-sm-5 col-sm-pull-7">
           <div class="video-block">
-            <div id="thumbnail_container"> <img src="{% static "lgmssis/images/about-video.jpg" %}" id="thumbnail" class="img-responsive" alt=""> </div>
-            <a href="https://www.youtube.com/watch?v=i11RXCJVEnw" class="start-video video"><img src="{% static "lgmssis/images/play-btn.png" %}" alt=""></a>
+            <div id="thumbnail_container"> <img src="{% static " lgmssis/images/about-video.jpg" %}" id="thumbnail" class="img-responsive" alt=""> </div>
+            <a href="https://www.youtube.com/watch?v=i11RXCJVEnw" class="start-video video"><img src="{% static " lgmssis/images/play-btn.png" %}" alt=""></a>
           </div>
         </div>
       </div>
     </div>
   </section>
   <!-- End About Section -->
+  {% block content %}
 
+  {% endblock %}
   <!-- Start Cources Section -->
   <section class="our-cources padding-lg">
     <div class="container">
@@ -272,7 +271,7 @@
       <ul class="course-list owl-carousel">
         <li>
           <div class="inner">
-            <figure><img src="{% static "lgmssis/images/whatdoyou1.jpg" %}" alt=""></figure>
+            <figure><img src="{% static " lgmssis/images/whatdoyou1.jpg" %}" alt=""></figure>
             <h3>Online <span>MBA General</span></h3>
             <p>A comprehensive study of modern business...</p>
             <div class="bottom-txt clearfix">
@@ -287,7 +286,7 @@
         <li>
           {% load static %}
           <div class="inner">
-            <figure><img src="{% static "lgmssis/images/whatdoyou1.jpg" %}" alt=""></figure>
+            <figure><img src="{% static " lgmssis/images/whatdoyou1.jpg" %}" alt=""></figure>
             <h3>Online MBA <span>Operations</span></h3>
             <p>A comprehensive study of modern business...</p>
             <div class="bottom-txt clearfix">
@@ -302,7 +301,7 @@
         <li>
           {% load static %}
           <div class="inner">
-            <figure><img src="{% static "lgmssis/images/whatdoyou1.jpg" %}" alt=""></figure>
+            <figure><img src="{% static " lgmssis/images/whatdoyou1.jpg" %}" alt=""></figure>
             <h3>Online MBA <span>Marketing</span></h3>
             <p>A comprehensive study of modern business...</p>
             <div class="bottom-txt clearfix">
@@ -317,7 +316,7 @@
         <li>
           {% load static %}
           <div class="inner">
-            <figure><img src="{% static "lgmssis/images/whatdoyou1.jpg" %}" alt=""></figure>
+            <figure><img src="{% static " lgmssis/images/whatdoyou1.jpg" %}" alt=""></figure>
             <h3>Online MBA <span>Human</span><span>Resource</span></h3>
             <p>A comprehensive study of modern business...</p>
             <div class="bottom-txt clearfix">
@@ -340,41 +339,41 @@
       <ul class="row">
         <li class="col-sm-4 equal-hight">
           {% load static %}
-          <div class="inner"> <img src="{% static "lgmssis/images/study-time-ico.jpg" %}" alt="Malleable Study Time">
+          <div class="inner"> <img src="{% static " lgmssis/images/study-time-ico.jpg" %}" alt="Malleable Study Time">
             <h3>Malleable Study Time</h3>
             <p>Study material available online 24/7. Study in your free time, no time management issues, perfect balance between work and study time.</p>
           </div>
         </li>
         <li class="col-sm-4 equal-hight">
           {% load static %}
-          <div class="inner"> <img src="{%static "lgmssis/images/placement-ico.jpg" %}" alt="Placement Assistance">
+          <div class="inner"> <img src="{%static " lgmssis/images/placement-ico.jpg" %}" alt="Placement Assistance">
             <h3>Placement Assistance</h3>
             <p>Edumart University Online has access to all of Edumart Group’s placement resources and alumni network, through which thousands of job opportunities are generated.</p>
           </div>
         </li>
         <li class="col-sm-4 equal-hight">
-          <div class="inner"> <img src="{% static "lgmssis/images/easy-access-ico.jpg"%}" alt="Easy To Access">
+          <div class="inner"> <img src="{% static " lgmssis/images/easy-access-ico.jpg"%}" alt="Easy To Access">
             <h3>Easy To Access</h3>
             <p>There is easy accessibility to online help in terms of online teachers and online forums. Teachers can be contacted with the help of video chats and e-mails.</p>
           </div>
         </li>
         <li class="col-sm-4 equal-hight">
           { % load static %}
-          <div class="inner"> <img src="{%static "lgmssis/images/study-go-ico.jpg"%}" alt="Study on the Go">
+          <div class="inner"> <img src="{%static " lgmssis/images/study-go-ico.jpg"%}" alt="Study on the Go">
             <h3>Study on the Go</h3>
             <p>LMS that is easily accessible on a number of devices such as mobile phones, I-pads, computers and other such devices. Availability of ready reckoners such that students can remember the key points of the session learnt.</p>
           </div>
         </li>
         <li class="col-sm-4 equal-hight">
           {% load static %}
-          <div class="inner"> <img src="{% static "lgmssis/images/get-innovative-ico.jpg"%}" alt="Get an Innovative, In-depth Transition">
+          <div class="inner"> <img src="{% static " lgmssis/images/get-innovative-ico.jpg"%}" alt="Get an Innovative, In-depth Transition">
             <h3>Get an Innovative, <span>In-depth Transition</span></h3>
             <p>The transition to an environment of learning becomes easy with the availability of multiple sources of learning such as text books, power-point presentations, and story boards on various subjects.</p>
           </div>
         </li>
         <li class="col-sm-4 equal-hight">
           {% load static %}
-          <div class="inner"> <img src="{% static "lgmssis/images/practical-ico.jpg"%}" alt="Practical & Interactive Participation">
+          <div class="inner"> <img src="{% static " lgmssis/images/practical-ico.jpg"%}" alt="Practical & Interactive Participation">
             <h3>Practical & Interactive <span>Participation</span></h3>
             <p>Assessments and interactivities are given at the end of every session such that the practical application of theory learnt can be gauged.</p>
           </div>
@@ -399,7 +398,7 @@
             <a href="#" class="more"><i class="fa fa-caret-right" aria-hidden="true"></i></a>
           </div>
           {% load static %}
-          <figure><img src="{%static "lgmssis/images/howtostudy1.jpg"%}" class="img-responsive" alt=""></figure>
+          <figure><img src="{%static " lgmssis/images/howtostudy1.jpg"%}" class="img-responsive" alt=""></figure>
         </li>
         <li class="col-sm-4">
           <div class="overly">
@@ -411,7 +410,7 @@
             <a href="#" class="more"><i class="fa fa-caret-right" aria-hidden="true"></i></a>
           </div>
           {% load static %}
-          <figure><img src="{% static "lgmssis/images/howtostudy1.jpg"%}" class="img-responsive" alt=""></figure>
+          <figure><img src="{% static " lgmssis/images/howtostudy1.jpg"%}" class="img-responsive" alt=""></figure>
         </li>
         <li class="col-sm-4">
           <div class="overly">
@@ -423,7 +422,7 @@
             <a href="#" class="more"><i class="fa fa-caret-right" aria-hidden="true"></i></a>
           </div>
           {% load static %}
-          <figure><img src="{% static "lgmssis/images/howtostudy1.jpg"%}" class="img-responsive" alt=""></figure>
+          <figure><img src="{% static " lgmssis/images/howtostudy1.jpg"%}" class="img-responsive" alt=""></figure>
         </li>
       </ul>
     </div>
@@ -468,7 +467,7 @@
         <li class="col-sm-4">
           <div class="inner">
             {% load static %}
-            <figure> <img src="{%static "lgmssis/images/dreampalace.jpg"%}" class="img-responsive">
+            <figure> <img src="{%static " lgmssis/images/dreampalace.jpg"%}" class="img-responsive">
               <figcaption>
                 <div class="cnt-block"> <a href="news.html" class="plus-icon">+</a>
                   <h3>We have added new features to Dream Palace</h3>
@@ -490,7 +489,7 @@
         <li class="col-sm-4">
           <div class="inner">
             {% load static %}
-            <figure> <img src="{% static "lgmssis/images/dreampalace.jpg"%}" class="img-responsive">
+            <figure> <img src="{% static " lgmssis/images/dreampalace.jpg"%}" class="img-responsive">
               <figcaption>
                 <div class="cnt-block"> <a href="news.html" class="plus-icon">+</a>
                   <h3>We have added new features to Dream Palace</h3>
@@ -512,7 +511,7 @@
         <li class="col-sm-4">
           <div class="inner">
             {% load static %}
-            <figure> <img src="{% static "lgmssis/images/dreampalace.jpg"%}" class="img-responsive">
+            <figure> <img src="{% static " lgmssis/images/dreampalace.jpg"%}" class="img-responsive">
               <figcaption>
                 <div class="cnt-block"> <a href="news.html" class="plus-icon">+</a>
                   <h3>We have added new features to Dream Palace</h3>
@@ -548,87 +547,87 @@
           <h3>Lorem ipsum</h3>
           <p>Lorem ipsum</p>
           {% load static %}
-          <a class="galleryItem" href="{% static "lgmssis/images/gallerypic15.jpg"%}"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+          <a class="galleryItem" href="{% static " lgmssis/images/gallerypic15.jpg"%}"> <span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
         </div>
-        <figure><img src="{%static "lgmssis/images/gallerypic15.jpg"%}" class="img-responsive" alt=""></figure>
+        <figure><img src="{%static " lgmssis/images/gallerypic15.jpg"%}" class="img-responsive" alt=""></figure>
       </li>
       <li>
         <div class="overlay">
           <h3>Lorem ipsum</h3>
           <p>Lorem ipsum</p>
-          <a class="galleryItem" href="{% static "lgmssis/images/gallerypic14.jpg"%}"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+          <a class="galleryItem" href="{% static " lgmssis/images/gallerypic14.jpg"%}"> <span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
         </div>
         {% load static %}
-        <figure><img src="{% static "lgmssis/images/gallerypic14.jpg"%}" class="img-responsive" alt=""></figure>
+        <figure><img src="{% static " lgmssis/images/gallerypic14.jpg"%}" class="img-responsive" alt=""></figure>
       </li>
       <li>
         <div class="overlay">
           <h3>Lorem ipsum</h3>
           <p>Lorem ipsum</p>
           {% load static %}
-          <a class="galleryItem" href="{% static "lgmssis/images/gallerypic13.jpg"%}"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+          <a class="galleryItem" href="{% static " lgmssis/images/gallerypic13.jpg"%}"> <span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
         </div>
         {% load static %}
-        <figure><img src="{% static "lgmssis/images/gallerypic13.jpg"%}" class="img-responsive" alt=""></figure>
+        <figure><img src="{% static " lgmssis/images/gallerypic13.jpg"%}" class="img-responsive" alt=""></figure>
       </li>
       <li>
         <div class="overlay">
           <h3>Lorem ipsum</h3>
           <p>Lorem ipsum</p>
           {% load static %}
-          <a class="galleryItem" href="{% static "lgmssis/images/gallerypic12.jpg"%}"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+          <a class="galleryItem" href="{% static " lgmssis/images/gallerypic12.jpg"%}"> <span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
         </div>
         {% load static %}
-        <figure><img src="{%static "lgmssis/images/gallerypic12.jpg"%}" class="img-responsive" alt=""></figure>
+        <figure><img src="{%static " lgmssis/images/gallerypic12.jpg"%}" class="img-responsive" alt=""></figure>
       </li>
       <li>
         <div class="overlay">
           <h3>Lorem ipsum</h3>
           <p>Lorem ipsum</p>
           {% load static %}
-          <a class="galleryItem" href="{% static "lgmssis/images/gallerypic11.jpg"%}"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+          <a class="galleryItem" href="{% static " lgmssis/images/gallerypic11.jpg"%}"> <span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
         </div>
-        <figure><img src="{%static "lgmssis/images/gallerypic11.jpg"%}" class="img-responsive" alt=""></figure>
+        <figure><img src="{%static " lgmssis/images/gallerypic11.jpg"%}" class="img-responsive" alt=""></figure>
       </li>
       <li>
         <div class="overlay">
           <h3>Lorem ipsum</h3>
           <p>Lorem ipsum</p>
-          <a class="galleryItem" href="{%static "lgmssis/images/gallerypic10.jpg"%}"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+          <a class="galleryItem" href="{%static " lgmssis/images/gallerypic10.jpg"%}"> <span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
         </div>
-        <figure><img src="{% static "lgmssis/images/gallerypic10.jpg"%}" class="img-responsive" alt=""></figure>
+        <figure><img src="{% static " lgmssis/images/gallerypic10.jpg"%}" class="img-responsive" alt=""></figure>
       </li>
       <li>
         <div class="overlay">
           <h3>Lorem ipsum</h3>
           <p>Lorem ipsum</p>
-          <a class="galleryItem" href="{% static "lgmssis/images/gallerypic9.jpg"%}"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+          <a class="galleryItem" href="{% static " lgmssis/images/gallerypic9.jpg"%}"> <span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
         </div>
-        <figure><img src="{% static "lgmssis/images/gallerypic9.jpg"%}" class="img-responsive" alt=""></figure>
+        <figure><img src="{% static " lgmssis/images/gallerypic9.jpg"%}" class="img-responsive" alt=""></figure>
       </li>
       <li>
         <div class="overlay">
           <h3>Lorem ipsum</h3>
           <p>Lorem ipsum</p>
-          <a class="galleryItem" href="{% static "lgmssis/images/gallerypic8.jpg"%}"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+          <a class="galleryItem" href="{% static " lgmssis/images/gallerypic8.jpg"%}"> <span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
         </div>
-        <figure><img src="{% static "lgmssis/images/gallerypic8.jpg"%}" class="img-responsive" alt=""></figure>
+        <figure><img src="{% static " lgmssis/images/gallerypic8.jpg"%}" class="img-responsive" alt=""></figure>
       </li>
       <li>
         <div class="overlay">
           <h3>Lorem ipsum</h3>
           <p>Lorem ipsum</p>
-          <a class="galleryItem" href="{%static "lgmssis/images/gallerypic7.jpg"%}"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+          <a class="galleryItem" href="{%static " lgmssis/images/gallerypic7.jpg"%}"> <span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
         </div>
-        <figure><img src="{%static "lgmssis/images/gallerypic7.jpg"%}" class="img-responsive" alt=""></figure>
+        <figure><img src="{%static " lgmssis/images/gallerypic7.jpg"%}" class="img-responsive" alt=""></figure>
       </li>
       <li>
         <div class="overlay">
           <h3>Lorem ipsum</h3>
           <p>Lorem ipsum</p>
-          <a class="galleryItem" href="{% static "lgmssis/images/gallerypic6.jpg" %}"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
+          <a class="galleryItem" href="{% static " lgmssis/images/gallerypic6.jpg" %}"><span class="icon-enlarge-icon"></span></a> <a href="gallery.html" class="more"><span class="icon-gallery-more-arrow"></span></a>
         </div>
-        <figure><img src="{% static "lgmssis/images/gallerypic6.jpg" %}" class="img-responsive" alt=""></figure>
+        <figure><img src="{% static " lgmssis/images/gallerypic6.jpg" %}" class="img-responsive" alt=""></figure>
       </li>
     </ul>
   </section>
@@ -639,14 +638,14 @@
   <section class="logos">
     <div class="container">
       <ul class="owl-carousel clearfix">
-        <li><a href="#"><img src="{% static "lgmssis/images/sped.jpeg"%}" class="img-responsive" alt=""></a></li>
-        <li><a href="#"><img src="{% static "lgmssis/images/redcross.png"%}" class="img-responsive" alt=""></a></li>
-        <li><a href="#"><img src="{% static "lgmssis/images/firelogo.jpg"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static " lgmssis/images/sped.jpeg"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static " lgmssis/images/redcross.png"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static " lgmssis/images/firelogo.jpg"%}" class="img-responsive" alt=""></a></li>
         {% load static %}
-        <li><a href="#"><img src="{% static "lgmssis/images/logodeped.png"%}" class="img-responsive" alt=""></a></li>
-        <li><a href="#"><img src="{% static "lgmssis/images/autism.jpeg"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static " lgmssis/images/logodeped.png"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static " lgmssis/images/autism.jpeg"%}" class="img-responsive" alt=""></a></li>
         {% load static %}
-        <li><a href="#"><img src="{% static "lgmssis/images/lgms.png"%}" class="img-responsive" alt=""></a></li>
+        <li><a href="#"><img src="{% static " lgmssis/images/lgms.png"%}" class="img-responsive" alt=""></a></li>
       </ul>
     </div>
   </section>
@@ -671,8 +670,8 @@
             <span>Thomas, <span>London</span></span>
           </li>
         </ul>
-        <div id="bx-pager"> <a data-slide-index="0" href=""><img src="{% static "lgmssis/images/testimonial-thumb1.jpg"%}" class="img-circle" alt="" /></a> <a data-slide-index="1" href=""><img src="{% static "lgmssis/images/testimonial-thumb2.jpg" %}" class="img-circle" alt="" /></a> <a
-            data-slide-index="2" href=""><img src="{%static "lgmssis/images/testimonial-thumb3.jpg"%}" class="img-circle" alt="" /></a> </div>
+        <div id="bx-pager"> <a data-slide-index="0" href=""><img src="{% static " lgmssis/images/testimonial-thumb1.jpg"%}" class="img-circle" alt="" /></a> <a data-slide-index="1" href=""><img src="{% static " lgmssis/images/testimonial-thumb2.jpg"
+              %}" class="img-circle" alt="" /></a> <a data-slide-index="2" href=""><img src="{%static " lgmssis/images/testimonial-thumb3.jpg"%}" class="img-circle" alt="" /></a> </div>
       </div>
     </div>
   </section>
@@ -726,7 +725,7 @@
           </div>
         </div>
         <div class="col-sm-3">
-          <div class="footer-logo hidden-xs"><a href="index.html"><img src="{% static "lgmssis/images/lgms_smal.jpg"%}" class="img-responsive" alt=""></a></div>
+          <div class="footer-logo hidden-xs"><a href="index.html"><img src="{% static " lgmssis/images/lgms_smal.jpg"%}" class="img-responsive" alt=""></a></div>
           <p>© 2019 <span>LGMS</span>. All rights reserved</p>
           <ul class="terms clearfix">
             <li><a href="terms.html">TERMS OF USE</a></li>
@@ -780,22 +779,22 @@
               <h3>@INSTAGRAM</h3>
               <ul class="clearfix">
                 <li><a href="#">
-                    <figure><img src="{% static "lgmssis/images/insta-img1.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static " lgmssis/images/insta-img1.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
                 <li><a href="#">
-                    <figure><img src="{% static "lgmssis/images/insta-img2.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static " lgmssis/images/insta-img2.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
                 <li><a href="#">
-                    <figure><img src="{% static "lgmssis/images/insta-img3.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static " lgmssis/images/insta-img3.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
                 <li><a href="#">
-                    <figure><img src="{% static "lgmssis/images/insta-img4.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static " lgmssis/images/insta-img4.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
                 <li><a href="#">
-                    <figure><img src="{% static "lgmssis/images/insta-img5.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static " lgmssis/images/insta-img5.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
                 <li><a href="#">
-                    <figure><img src="{% static "lgmssis/images/insta-img6.jpg" %}" class="img-responsive" alt=""></figure>
+                    <figure><img src="{% static " lgmssis/images/insta-img6.jpg" %}" class="img-responsive" alt=""></figure>
                   </a></li>
               </ul>
             </div>
@@ -812,7 +811,7 @@
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   {% load static %}
-  <script src="{% static "lgmssis/js/jquery.min.js" %}"></script>
+  <script src="{% static " lgmssis/js/jquery.min.js" %}"></script>
   <!-- Bootsrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
@@ -824,7 +823,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   <!-- Match Height JS -->
   {% load static %}
-  <script src="{% static "lgmssis/assets/matchHeight/js/matchHeight-min.js" %}"></script>
+  <script src="{% static " lgmssis/assets/matchHeight/js/matchHeight-min.js" %}"></script>
   <!-- Bxslider JS -->
 
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -833,21 +832,21 @@
   <! Counter Up JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
   {% load static %}
-  <script src="{% static "lgmssis/assets/counterup/js/counterup.min.js" %}"></script>
+  <script src="{% static " lgmssis/assets/counterup/js/counterup.min.js" %}"></script>
   <!-- Magnific Popup JS -->
   {% load static %}
-  <script src="{% static "lgmssis/assets/magnific-popup/js/magnific-popup.min.js" %}"></script>
+  <script src="{% static " lgmssis/assets/magnific-popup/js/magnific-popup.min.js" %}"></script>
   <!-- Owl Carousal JS -->
   <!-- <script src="{%static "assets/owl-carousel/js/owl.carousel.min.js"%}"></script> -->
   <!-- <script src="{%static "jquery.min.js"%}"></script> -->
   {% load static %}
-  <script src="{% static "lgmssis/owlcarousel/owl.carousel.min.js" %}"></script>
+  <script src="{% static " lgmssis/owlcarousel/owl.carousel.min.js" %}"></script>
   <!-- Modernizr JS -->
   {% load static %}
-  <script src="{% static "lgmssis/js/modernizr.custom.js" %}"></script>
+  <script src="{% static " lgmssis/js/modernizr.custom.js" %}"></script>
   <!-- Custom JS -->
   {% load static %}
-  <script src="{% static "lgmssis/js/custom.js" %}"></script>
+  <script src="{% static " lgmssis/js/custom.js" %}"></script>
   <!-- this is my injected from the net my corrections -wgmbg -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

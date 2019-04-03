@@ -1,3 +1,9 @@
+{% extends "base.html" %}
+{% block title %} About Us {% endblock %}
+
+{% block content %}
+
+{% endblock %}
 <!doctype html>
 <html lang="en">
 
@@ -151,7 +157,7 @@
     <!-- End Navigation -->
   </header>
   <!-- end Header -->
-
+  {% block content %}
   <!-- Start Banner -->
   <div class="inner-banner blog">
     <div class="container">
@@ -321,7 +327,7 @@
     </div>
   </section>
   <!-- end Browse Teacher -->
-
+  {% endblock %}
   <!-- Start logos -->
   <section class="logos">
     <div class="container">
