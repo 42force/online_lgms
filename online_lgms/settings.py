@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lgmssis.apps.LgmssisConfig',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
