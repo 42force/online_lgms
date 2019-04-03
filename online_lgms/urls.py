@@ -26,4 +26,15 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/lgmssis/', permanent=True)),
     path('pages/', include('django.contrib.flatpages.urls')),
 
+    #this is for the flatpages
+    path('aboutus/', views.flatpage, {'url': '/about/'}, name='about'),
+    path('gallery/', views.flatpage, {'url': '/gallery/'}, name='gallery'),
+    path('contact/', views.flatpage, {'url': '/contact/'}, name='contact'),
+    path('news/', views.flatpage, {'url': '/news/'}, name='news'),
+    path('faq1/', views.flatpage, {'url': '/faq1/'}, name='faq1'),
+    path('faq2/', views.flatpage, {'url': '/faq2/'}, name='faq2'),
+    path('coming-soon/', views.flatpage, {'url': '/coming-soon/'}, name='coming-soon'),
+    path('privacy/', views.flatpage, {'url': '/privacy/'}, name='privacy'),
+    path('terms/', views.flatpage, {'url': '/terms/'}, name='terms'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
