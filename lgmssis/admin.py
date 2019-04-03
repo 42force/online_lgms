@@ -2,6 +2,9 @@ from django.contrib import admin
 from django.contrib.flatpages.admin import FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from django.utils.translation import gettext_lazy as _
+from django.contrib.admin import AdminSite
+
+admin.site.site_header = 'Learning Garden Montessori Administration'
 
 # Register your models here.
 
