@@ -7,7 +7,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('', TemplateView.as_view(template_name='lgmssis/course-listing.html'), name='course'),
+    path('', TemplateView.as_view(template_name='course-listing.html'), name='course'),
 
 
     #path('hello/', MyView.as_view(), name='my-view'),
