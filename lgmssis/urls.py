@@ -7,7 +7,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('courselist/', views.courselist, name='courselist')
+    path('/courselist/', views.courselist, name='courselist')
 
 
     #path('hello/', MyView.as_view(), name='my-view'),
