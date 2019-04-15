@@ -39,5 +39,6 @@ urlpatterns = [
     path('coming-soon/', views.flatpage, {'url': '/coming-soon/'}, name='coming-soon'),
     path('privacy/', views.flatpage, {'url': '/privacy/'}, name='privacy'),
     path('terms/', views.flatpage, {'url': '/terms/'}, name='terms'),
+    path('courselist/', views.flatpage{'url': '/courselist/'}, name='courselist'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
