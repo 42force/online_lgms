@@ -7,7 +7,3 @@ from django.views.generic import TemplateView
 
 def index(request):
     return render(request, 'lgmssis/index.html')
-
-
-def courselist(request):
-    return render(request, 'lgmssis/course-listing.html')
