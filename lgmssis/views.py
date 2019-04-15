@@ -9,7 +9,5 @@ def index(request):
     return render(request, 'lgmssis/index.html')
 
 
-# def courselist(request):
-#     return render(request, 'lgmssis/course-listing.html')
-class CourseListView(TemplateView):
-    template_name = "lgmssis/course-listing.html"
+def courselist(request):
+    return render(request, 'lgmssis/course-listing.html')
