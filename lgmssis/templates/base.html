@@ -143,8 +143,8 @@
             <button class="search-btn"><span class="icon-search-icon"></span></button>
           </form>
           <ul class="nav navbar-nav">
-            {% for page in flatpages%}
             <li> <a href="{% url 'index'%}">Home</a></li>
+            {% for page in flatpages%}
             <!-- change in about -->
             <li> <a href="{{ page.url }}">{{page.title}}</a></li>
             {% endfor %}
