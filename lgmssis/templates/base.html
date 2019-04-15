@@ -1,4 +1,6 @@
 <!doctype html>
+{% load flatpages %}
+{% get_flatpages as flatpages%}
 <html lang="en">
 
 <head>
@@ -140,8 +142,10 @@
             <button class="search-btn"><span class="icon-search-icon"></span></button>
           </form>
           <ul class="nav navbar-nav">
+            {% for page in flatpages%}
             <li> <a href="{% url 'index'%}">Home</a></li>
-            <li> <a href="about.html">About</a></li>
+            <!-- change in about -->
+            <li> <a href="{{ page.url }}">{{page.title}}</a></li>
             <li class="dropdown"> <a data-toggle="dropdown" href="#">Our Courses <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
                 <li><a href="course-listing.html">course Listing</a></li>
