@@ -8,5 +8,5 @@ def index(request):
     return render(request, 'lgmssis/index.html'),
 
 
-def course_listing(request):
+def courselist(request):
     return render(request, 'lgmssis/course-listing.html'),
