@@ -9,4 +9,4 @@ def index(request):
 
 
 def course_listing(request):
-    return render(request, 'flatpages/course-listing.html')
+    return render(request, 'lgmssis/course-listing.html')
