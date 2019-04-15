@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('courselist/', views.courselist, name='course_listing'),
+    path('courselist/', views.courselist, name='course'),
 
 
     #path('hello/', MyView.as_view(), name='my-view'),
