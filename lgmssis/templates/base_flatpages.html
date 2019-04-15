@@ -144,7 +144,7 @@
           <ul class="nav navbar-nav">
             <!-- this is just a test of the flatpage what will happen -->
             {% for page in flatpages %}
-            <li> <a href="{{ page.url }}">Home</a></li>
+            <li> <a href="{% url 'index' %}">Home</a></li>
             {% endfor %}
             <!-- end of flatpage -->
 
