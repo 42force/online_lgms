@@ -29,6 +29,7 @@ urlpatterns = [
     path('pages/', include('django.contrib.flatpages.urls')),
 
     #this is for the flatpages
+    
     path('aboutus/', views.flatpage, {'url': '/about/'}, name='about'),
     path('gallery/', views.flatpage, {'url': '/gallery/'}, name='gallery'),
     path('contact/', views.flatpage, {'url': '/contact/'}, name='contact'),
