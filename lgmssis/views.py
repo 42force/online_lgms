@@ -5,4 +5,4 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'flatpages/home.html')
+    return render(request, 'lgmssis/home.html')
