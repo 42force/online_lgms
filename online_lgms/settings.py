@@ -71,6 +71,9 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 
 ROOT_URLCONF = 'online_lgms.urls'
 
+AUTH_USER_MODEL = 'accounts.User'
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
