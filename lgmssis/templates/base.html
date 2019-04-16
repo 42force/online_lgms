@@ -117,7 +117,7 @@
     <!-- End Header top Bar -->
     <!-- Start Header Middle -->
     <div class="container header-middle">
-      <div class="row"> <span class="col-xs-6 col-sm-3"><a href="{% url 'index'%}"><img src="{%static "lgmssis/images/lgms_smal.jpg"%}" class="img-responsive" alt=""></a></span>
+      <div class="row"> <span class="col-xs-6 col-sm-3"><a href="{% url 'index'%}"><img src="{%static "lgmssis/images/lgmssmalllogo.jpg"%}" class="img-responsive" alt=""></a></span>
         <div class="col-xs-6 col-sm-3"></div>
         <div class="col-xs-6 col-sm-9">
           <div class="contact clearfix">
@@ -126,7 +126,7 @@
               <li> <span>Toll Free</span> +632 820 4064 </li>
               <li> <span>Toll Free</span> +632 703 0662 </li>
             </ul>
-            <a href="login.html" class="login">Student Login <span class="icon-more-icon"></span></a>
+            <a href="{% url 'lgmssis:login' %}" class="login">Student Login <span class="icon-more-icon"></span></a>
           </div>
         </div>
       </div>
