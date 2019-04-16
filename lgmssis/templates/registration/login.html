@@ -1,11 +1,80 @@
-{% extends "base_generic.html" %}
+<!doctype html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+      <title>Learning Garden Montessori Philippines</title>
+      <!-- Reset CSS -->
+      {% load static %}
+      <link href="{% static "lgmssis/css/reset.css" %}" rel="stylesheet">
+      <!-- Custom Fonts -->
+      {% load static %}
+      <link href="{% static "lgmssis/css/fonts.css" %}" rel="stylesheet">
+      <!-- Bootstrap -->
+      {% load static %}
+      <link href="{% static "lgmssis/assets/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+      <!-- Select2 -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+      <!-- <link href="assets/select2/css/select2.min.css" rel="stylesheet"> -->
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      <!-- <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"> -->
+      <!-- <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
+      <!-- Magnific Popup -->
+      {% load static %}
+      <link href="{%static "lgmssis/assets/magnific-popup/css/magnific-popup.css" %}" rel="stylesheet">
+      <!-- Iconmoon -->
+      {% load static %}
+      <link href="{%static "lgmssis/assets/iconmoon/css/iconmoon.css" %}" rel="stylesheet">
+      <!-- Iconmoon -->
+      <!-- bxslider css -->
+      <!-- <link rel="stylesheet" href="css/jquery.bxslider.css"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+      <!-- bxslider css -->
+      <!-- Owl Carousel -->
+      <!-- <link href="assets/owl-carousel/css/owl.carousel.min.css" rel="stylesheet"> -->
+      <!-- Owl Carousel below is the one i inserted-->
+      {% load static %}
+      <link rel="stylesheet" href="{%static "lgmssis/owlcarousel/owl.carousel.min.css"%}">
+      {% load static %}
+      <link rel="stylesheet" href="{%static "lgmssis/owlcarousel/owl.theme.default.min.css"%}"> <!-- Animate -->
+      {% load static %}
+      <link href="{%static "lgmssis/css/animate.css"%}" rel="stylesheet">
+      <!-- Custom Style -->
+      {% load static %}
+      <link href="{%static "lgmssis/css/custom.css"%}" rel="stylesheet">
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+            <script src="js/html5shiv.min.js"></script>
+            <script src="js/respond.min.js"></script>
+            <![endif]-->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
-{% block content %}
+    </head>
+    <body class="fill-bg">
+
+        <!-- Start Preloader -->
+        <div id="loading">
+            <div class="element">
+                <div class="sk-folding-cube">
+                    <div class="sk-cube1 sk-cube"></div>
+                    <div class="sk-cube2 sk-cube"></div>
+                    <div class="sk-cube4 sk-cube"></div>
+                    <div class="sk-cube3 sk-cube"></div>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+
         <!-- Start Login -->
         <section class="login-wrapper">
             <div class="inner">
                 <div class="login">
-                    <div class="login-logo"> <a href="index.html"><img src="images/lgmssmalllogo.png" class="img-responsive" alt=""></a> </div>
+                    <div class="login-logo"> <a href="index.html"><img src="images/login-logo.png" class="img-responsive" alt=""></a> </div>
                     <div class="head-block">
                         <h1>LOGIN  Now</h1>
                     </div>
@@ -40,4 +109,16 @@
             </div>
         </section>
         <!-- End Login -->
-{% endblock %}
+
+        <a href="#" class="scroll-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        {% load static %}
+        <script src="{% static "lgmssis/js/jquery.min.js" %}"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <!-- Custom JS -->
+        <script src="{% static "lgmssis/js/custom.js" %}"></script>
+    </body>
+</html>
