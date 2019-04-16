@@ -71,7 +71,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'online_lgms.urls'
 
-AUTH_USER_MODEL = 'accounts.User'
 
 
 TEMPLATES = [
