@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'mq-%3au71tv*w-((*ie%x^b-y3r@*-br$x6_8f)2)+!aoe-4um'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
           'www.learninggardenmontessori.ph',
