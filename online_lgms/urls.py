@@ -28,8 +28,6 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/lgmssis/', permanent=True)),
     path('pages/', include('django.contrib.flatpages.urls')),
     
-    accounts/login/ [name='login']
-
     #path('accounts/login/', auth_views.LoginView.as_view(template_name='lgmssis/login.html')),
 
     #this is for the flatpages
