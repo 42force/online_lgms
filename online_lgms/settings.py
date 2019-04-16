@@ -61,6 +61,10 @@ MIDDLEWARE = [
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
 
+CSRF_COOKIE_SECURE = True
+X_FRAME_OPTIONS = DENY
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')?
+
 ROOT_URLCONF = 'online_lgms.urls'
 
 TEMPLATES = [
