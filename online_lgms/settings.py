@@ -29,8 +29,6 @@ ALLOWED_HOSTS = [
           '127.0.0.1',
 		  '192.168.0.103',
 		  '122.3.47.190',
-          'learninggardenmontessori.ph',
-          'localhost',
 ]
 
 
