@@ -27,11 +27,11 @@ urlpatterns = [
     path('lgmssis/', include('lgmssis.urls')),
     path('', RedirectView.as_view(url='/lgmssis/', permanent=True)),
     path('pages/', include('django.contrib.flatpages.urls')),
-    
+
     #path('accounts/login/', auth_views.LoginView.as_view(template_name='lgmssis/login.html')),
 
     #this is for the flatpages
-    path('index/', views.flatpage, {'url': '/index/'}, name='index'),
+    path('home/', views.flatpage, {'url': '/home/'}, name='home'),
     path('aboutus/', views.flatpage, {'url': '/about/'}, name='about'),
     path('gallery/', views.flatpage, {'url': '/gallery/'}, name='gallery'),
     path('contact/', views.flatpage, {'url': '/contact/'}, name='contact'),

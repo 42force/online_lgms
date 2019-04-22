@@ -145,11 +145,8 @@
             <button class="search-btn"><span class="icon-search-icon"></span></button>
           </form>
           <ul class="nav navbar-nav">
-            <li> <a href="{% url 'index'%}">Home</a></li>
-            {% for page in flatpages%}
             <!-- change in about -->
-            <li> <a href="{{ page.url }}">{{page.title}}</a></li>
-            {% endfor %}
+            <li> <a href="{% url : 'about'%}">About</a></li>
             <!-- <li class="dropdown"> <a data-toggle="dropdown" href="#">Temporary <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Course Listing</a></li>
