@@ -90,7 +90,7 @@
         </ul>
         <div class="right-block clearfix">
           <ul class="top-nav hidden-xs">
-            <li><a href="register.html">Register</a></li>
+            <li><a href="{% url 'login' %}">Register</a></li>
             <li><a href="apply-online.html">Apply Online</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="faq1.html">FAQs</a></li>
@@ -146,12 +146,12 @@
           </form>
           <ul class="nav navbar-nav">
             <!-- change in about -->
-            <li> <a href="{% url 'index' %}">Home</a></li>
+            <li> <a href="{% url 'about' %}">Home</a></li>
             <li> <a href="{% url 'about' %}">About</a></li>
             <li></li>
             <li class="dropdown"> <a data-toggle="dropdown" href="#">Courses <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
-                <li><a href="{% url 'gallery' %}">Course Offered</a></li>
+                <li><a href="{% url 'news' %}">Courses Offered</a></li>
                 <li><a href="#">CASA</a></li>
                 <li><a href="#">SPED</a></li>
                 <li><a href="#">ELEMENTARY</a></li>
@@ -167,16 +167,15 @@
                 <li class="visible-xs"><a href="blog.html">Blog</a></li>
                 <li class="visible-xs"><a href="faq.html">FAQs</a></li>
                 <li><a href="news.html">Latest News</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="faq1.html">FAQ 1</a></li>
-                <li><a href="faq2.html">FAQ 2</a></li>
-                <li><a href="coming-soon.html">Coming Soon</a></li>
-                <li class="hidden-xs"><a href="privacy.html">Privacy Policy</a></li>
-                <li class="hidden-xs"><a href="terms.html">Terms of Use</a></li>
-                <li class="hidden-xs"><a href="generic-ui.html">Generic UI</a></li>
+                <li><a href="{% url 'news' %}">Testimonials</a></li>
+                <li><a href="{% url 'faq1' %}">FAQ 1</a></li>
+                <li><a href="{% url 'faq2' %}">FAQ 2</a></li>
+                <li><a href="{% url 'coming-soon' %}">Coming Soon</a></li>
+                <li class="hidden-xs"><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+                <li class="hidden-xs"><a href="{% url 'terms' %}>Terms of Use</a></li>
               </ul>
             </li>
-            <li> <a href="contact.html">Contact</a></li>
+            <li> <a href="{% url 'contact' %}">Contact</a></li>
           </ul>
         </div>
       </div>
