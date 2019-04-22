@@ -44,11 +44,11 @@ urlpatterns = [
     path('privacy/', views.flatpage, {'url': '/privacy/'}, name='privacy'),
     path('terms/', views.flatpage, {'url': '/terms/'}, name='terms'),
     path('courses/', views.flatpage, {'url': '/courses/'}, name='courses'),
-    path('courses/casa/', views.flatpage, {'url': '/courses/casa'}, name='casa'),
-    path('courses/sped/', views.flatpage, {'url': '/courses/sped'}, name='sped'),
-    path('courses/elementary/', views.flatpage, {'url': '/courses/elementary'}, name='elementary'),
-    path('courses/junior/', views.flatpage, {'url': '/courses/junior'}, name='junior'),
-    path('courses/senior/', views.flatpage, {'url': '/courses/senior'}, name='senior'),
+    path('courses/casa/', views.flatpage, {'url': '/courses/casa/'}, name='casa'),
+    path('courses/sped/', views.flatpage, {'url': '/courses/sped/'}, name='sped'),
+    path('courses/elementary/', views.flatpage, {'url': '/courses/elementary/'}, name='elementary'),
+    path('courses/junior/', views.flatpage, {'url': '/courses/junior/'}, name='junior'),
+    path('courses/senior/', views.flatpage, {'url': '/courses/senior/'}, name='senior'),
 
 
 
