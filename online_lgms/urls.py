@@ -38,9 +38,18 @@ urlpatterns = [
     path('news/', views.flatpage, {'url': '/news/'}, name='news'),
     path('faq1/', views.flatpage, {'url': '/faq1/'}, name='faq1'),
     path('faq2/', views.flatpage, {'url': '/faq2/'}, name='faq2'),
+    path('testimonial/', views.flatpage, {'url': '/testimonial/'}, name='testimonial'),
     path('coming-soon/', views.flatpage, {'url': '/coming-soon/'}, name='coming-soon'),
     path('privacy/', views.flatpage, {'url': '/privacy/'}, name='privacy'),
     path('terms/', views.flatpage, {'url': '/terms/'}, name='terms'),
+    path('courses/', views.flatpage, {'url': '/courses/'}, name='courses'),
+    path('courses/casa/', views.flatpage, {'url': '/courses/casa'}, name='casa'),
+    path('courses/sped/', views.flatpage, {'url': '/courses/sped'}, name='sped'),
+    path('courses/elementary/', views.flatpage, {'url': '/courses/elementary'}, name='elementary'),
+    path('courses/junior/', views.flatpage, {'url': '/courses/junior'}, name='junior'),
+    path('courses/senior/', views.flatpage, {'url': '/courses/senior'}, name='senior'),
+
+
 
     #accounts management
 

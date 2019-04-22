@@ -146,20 +146,21 @@
           </form>
           <ul class="nav navbar-nav">
             <!-- change in about -->
+            <li> <a href="{% url 'home' %}">Home</a></li>
             <li> <a href="{% url 'about' %}">About</a></li>
-            <!-- <li class="dropdown"> <a data-toggle="dropdown" href="#">Temporary <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <li></li>
+            <li class="dropdown"> <a data-toggle="dropdown" href="#">Courses <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Course Listing</a></li>
+                <li><a href="{% url 'courses' %}">Course Offered</a></li>
                 <li><a href="course-listing.html">CASA</a></li>
                 <li><a href="course-listing.html">SPED</a></li>
                 <li><a href="mba-marketing.html">ELEMENTARY</a></li>
                 <li><a href="mba-general.html">JUNIOR HIGH</a></li>
-                <li><a href="mba-general.html">SENIOR HIGH</a></li>
-                <!-- <li><a href="mba-operations.html">MBA Operations</a></li> -->
-              <!-- </ul> -->
-            <!-- </li> --> -->
-            <!-- <li> <a href="gallery.html">Gallery</a></li> -->
-            <!-- <li class="dropdown"> <a data-toggle="dropdown" href="#">Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <li><a href="{% url 'senior' %}">SENIOR HIGH</a></li>
+              </ul>
+            </li>
+            <li> <a href="gallery.html">Gallery</a></li>
+            <li class="dropdown"> <a data-toggle="dropdown" href="#">Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
                 <li class="visible-xs"><a href="register.html">Register</a></li>
                 <li class="visible-xs"><a href="apply-online.html">Apply online</a></li>
@@ -174,8 +175,8 @@
                 <li class="hidden-xs"><a href="terms.html">Terms of Use</a></li>
                 <li class="hidden-xs"><a href="generic-ui.html">Generic UI</a></li>
               </ul>
-            </li> -->
-            <!-- <li> <a href="contact.html">Contact</a></li> -->
+            </li>
+            <li> <a href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
