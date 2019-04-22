@@ -33,7 +33,7 @@ urlpatterns = [
     #this is for the flatpages
     path('home/', views.flatpage, {'url': '/home/'}, name='home'),
     path('index/', views.flatpage, {'url': '/index/'}, name='index'),
-    path('aboutus/', views.flatpage, {'url': '/about/'}, name='about'),
+    path('about/', views.flatpage, {'url': '/about/'}, name='about'),
     path('gallery/', views.flatpage, {'url': '/gallery/'}, name='gallery'),
     path('contact/', views.flatpage, {'url': '/contact/'}, name='contact'),
     path('news/', views.flatpage, {'url': '/news/'}, name='news'),
