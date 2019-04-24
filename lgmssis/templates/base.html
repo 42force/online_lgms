@@ -117,7 +117,7 @@
     <!-- End Header top Bar -->
     <!-- Start Header Middle -->
     <div class="container header-middle">
-      <div class="row"> <span class="col-xs-6 col-sm-3"><a href="{% url 'index'%}"><img src="{%static "lgmssis/images/lgmssmalllogo.jpg"%}" class="img-responsive" alt=""></a></span>
+      <div class="row"> <span class="col-xs-6 col-sm-3"><a href="{% url 'home' %}"><img src="{%static "lgmssis/images/lgmssmalllogo.jpg"%}" class="img-responsive" alt=""></a></span>
         <div class="col-xs-6 col-sm-3"></div>
         <div class="col-xs-6 col-sm-9">
           <div class="contact clearfix">
@@ -146,13 +146,13 @@
           </form>
           <ul class="nav navbar-nav">
             <!-- change in about -->
-            <li> <a href="{% url 'about' %}">Home</a></li>
+            <li> <a href="{% url 'home' %}">Home</a></li>
             <li> <a href="{% url 'about' %}">About</a></li>
             <li></li>
             <li class="dropdown"> <a data-toggle="dropdown" href="#">Courses <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
-                <li><a href="{% url 'news' %}">Courses Offered</a></li>
-                <li><a href="#">CASA</a></li>
+                <li><a href="{% url 'courses' %}">Courses Offered</a></li>
+                <li><a href="{% url 'casa' %}">CASA</a></li>
                 <li><a href="#">SPED</a></li>
                 <li><a href="#">ELEMENTARY</a></li>
                 <li><a href="#">JUNIOR HIGH</a></li>
@@ -442,7 +442,7 @@
 
   <!-- Custom JS -->
   {% load static %}
-  <script src="{%static "js/jquery.validate.min.js"%}"></script>
+  <script src="{%static "lgmssis/js/jquery.validate.min.js"%}"></script>
 
   <!-- <script src="{%static "js/jquery.validate.min.js"%}"></script> -->
 
