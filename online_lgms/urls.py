@@ -50,6 +50,7 @@ urlpatterns = [
     path('courses/elementary/', views.flatpage, {'url': '/courses/elementary/'}, name='elementary'),
     path('courses/junior/', views.flatpage, {'url': '/courses/junior/'}, name='junior'),
     path('courses/senior/', views.flatpage, {'url': '/courses/senior/'}, name='senior'),
+    path('courses/test/', views.flatpage, {'url': '/courses/test/'}, name='test'),
 
 
 
