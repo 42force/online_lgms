@@ -13,7 +13,5 @@ urlpatterns = [
     path('apply/', views.SignUp.as_view(), name='apply'),
 
 
-
-
     #path('hello/', MyView.as_view(), name='my-view'),
 ]

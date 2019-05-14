@@ -24,8 +24,8 @@ from django.contrib.flatpages import views
 
 urlpatterns = [
 
-    path('jet/', include('jet.urls', 'jet')),
-    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
+    # path('jet/', include('jet.urls', 'jet')),
+    # path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
     path('lgmssis/', include('lgmssis.urls')),
     path('', RedirectView.as_view(url='/lgmssis/', permanent=True)),
@@ -54,8 +54,7 @@ urlpatterns = [
     path('courses/junior/', views.flatpage, {'url': '/courses/junior/'}, name='junior'),
     path('courses/senior/', views.flatpage, {'url': '/courses/senior/'}, name='senior'),
     path('courses/test/', views.flatpage, {'url': '/courses/test/'}, name='test'),
-
-
+    path('applyonline/', views.flatpage, {'url': '/applyonline/'}, name='applyonline'),
 
     #accounts management
 
