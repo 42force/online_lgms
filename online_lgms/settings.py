@@ -107,9 +107,9 @@ DATABASES = {
         'PASSWORD': 'testroot',
 		'OPTIONS': {
     	'sql_mode': 'STRICT_TRANS_TABLES',},
-		'https://console.cloud.google.com/sql/instances'
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+		#'https://console.cloud.google.com/sql/instances'
+        #'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        #'PORT': '3306',
     }
 }
 
