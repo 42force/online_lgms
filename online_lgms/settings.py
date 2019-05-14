@@ -72,7 +72,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'online_lgms.urls'
 
+#this is from the django-jet
+from django.conf import global_settings
 
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'django.core.context_processors.request',
+)
 
 TEMPLATES = [
     {
@@ -85,6 +90,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
             ],
         },
     },
