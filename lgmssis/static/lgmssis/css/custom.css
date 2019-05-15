@@ -4556,7 +4556,7 @@ a.btn-circle:hover {
 .coming-soon .right{
 	height: 100vh;
 	display:table;
-	background: url(..lgmssis/images/howtostudy1.jpg) no-repeat center top / cover;
+	background: url(../lgmssis/images/howtostudy1.jpg) no-repeat center top / cover;
 	text-align:center;
 	position: relative;
 	color:#fff;
