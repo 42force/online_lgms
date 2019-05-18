@@ -41,6 +41,8 @@ urlpatterns = [
     path('courses/', views.flatpage, {'url': '/courses/'}, name='courses'),
     path('gallery/', views.flatpage, {'url': '/gallery/'}, name='gallery'),
     path('contact/', views.flatpage, {'url': '/contact/'}, name='contact'),
+    path('news/', views.flatpage, {'url': '/news/'}, name='news'),
+
 
     path('faq1/', views.flatpage, {'url': '/faq1/'}, name='faq1'),
     path('faq2/', views.flatpage, {'url': '/faq2/'}, name='faq2'),
@@ -57,7 +59,6 @@ urlpatterns = [
     path('applyonline/', views.flatpage, {'url': '/applyonline/'}, name='applyonline'),
 
     #this is for the news - link
-    path('news/', views.flatpage, {'url': '/news/'}, name='news'),
     path('news/news-augustbuwan/', views.flatpage, {'url': '/news/news-augustbuwan/'}, name='news-augustbuwan'),
     path('news/news-familymonth/', views.flatpage, {'url': '/news/news-familymonth/'}, name='news-familymonth'),
     path('news/news-julynutrition/', views.flatpage, {'url': '/news/news-julynutrition/'}, name='news-julynutrition'),
