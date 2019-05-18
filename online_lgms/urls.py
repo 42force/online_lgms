@@ -41,7 +41,7 @@ urlpatterns = [
     path('courses/', views.flatpage, {'url': '/courses/'}, name='courses'),
     path('gallery/', views.flatpage, {'url': '/gallery/'}, name='gallery'),
     path('contact/', views.flatpage, {'url': '/contact/'}, name='contact'),
-    path('news/', views.flatpage, {'url': '/news/'}, name='news'),
+
     path('faq1/', views.flatpage, {'url': '/faq1/'}, name='faq1'),
     path('faq2/', views.flatpage, {'url': '/faq2/'}, name='faq2'),
     path('testimonials/', views.flatpage, {'url': '/testimonials/'}, name='testimonials'),
@@ -56,7 +56,19 @@ urlpatterns = [
     path('courses/test/', views.flatpage, {'url': '/courses/test/'}, name='test'),
     path('applyonline/', views.flatpage, {'url': '/applyonline/'}, name='applyonline'),
 
+    #this is for the news - link
+    path('news/', views.flatpage, {'url': '/news/'}, name='news'),
+    path('news/news-augustbuwan/', views.flatpage, {'url': '/news/news-augustbuwan'}, name='news-august'),
+    path('news/news-familymonth', views.flatpage, {'url': '/news/news-familymonth'}, name='news-familymonth'),
+    path('news/news-julynutrition', views.flatpage, {'url': '/news/news-julynutrition'}, name='news-julynutrition'),
+    path('news/news-midyearmusical', views.flatpage, {'url': '/news/news-midyearmusical'}, name='news-midyearmusical'),
+    path('news/news-montessorimonth', views.flatpage, {'url': '/news/news-montessorimonth'}, name='news-montessorimonth'),
+    path('news/news-nationalsafe', views.flatpage, {'url': '/news/news-nationalsafe'}, name='news-nationalsafe'),
+    path('news/news-openhouse', views.flatpage, {'url': '/news/news-openhouse'}, name='news-openhouse'),
+    path('news/news-psap', views.flatpage, {'url': '/news/news-psap'}, name='news-psap'),
     #accounts management
+
+    
 
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
