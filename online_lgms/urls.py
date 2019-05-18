@@ -58,14 +58,14 @@ urlpatterns = [
 
     #this is for the news - link
     path('news/', views.flatpage, {'url': '/news/'}, name='news'),
-    path('news/news-augustbuwan/', views.flatpage, {'url': '/news/news-augustbuwan'}, name='news-augustbuwan'),
-    path('news/news-familymonth', views.flatpage, {'url': '/news/news-familymonth'}, name='news-familymonth'),
-    path('news/news-julynutrition', views.flatpage, {'url': '/news/news-julynutrition'}, name='news-julynutrition'),
-    path('news/news-midyearmusical', views.flatpage, {'url': '/news/news-midyearmusical'}, name='news-midyearmusical'),
-    path('news/news-montessorimonth', views.flatpage, {'url': '/news/news-montessorimonth'}, name='news-montessorimonth'),
-    path('news/news-nationalsafe', views.flatpage, {'url': '/news/news-nationalsafe'}, name='news-nationalsafe'),
-    path('news/news-openhouse', views.flatpage, {'url': '/news/news-openhouse'}, name='news-openhouse'),
-    path('news/news-psap', views.flatpage, {'url': '/news/news-psap'}, name='news-psap'),
+    path('news/news-augustbuwan/', views.flatpage, {'url': '/news/news-augustbuwan/'}, name='news-augustbuwan'),
+    path('news/news-familymonth/', views.flatpage, {'url': '/news/news-familymonth/'}, name='news-familymonth'),
+    path('news/news-julynutrition/', views.flatpage, {'url': '/news/news-julynutrition/'}, name='news-julynutrition'),
+    path('news/news-midyearmusical/', views.flatpage, {'url': '/news/news-midyearmusical/'}, name='news-midyearmusical'),
+    path('news/news-montessorimonth/', views.flatpage, {'url': '/news/news-montessorimonth/'}, name='news-montessorimonth'),
+    path('news/news-nationalsafe/', views.flatpage, {'url': '/news/news-nationalsafe/'}, name='news-nationalsafe'),
+    path('news/news-openhouse/', views.flatpage, {'url': '/news/news-openhouse/'}, name='news-openhouse'),
+    path('news/news-psap/', views.flatpage, {'url': '/news/news-psap/'}, name='news-psap'),
     #accounts management
 
 
