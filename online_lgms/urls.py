@@ -58,7 +58,7 @@ urlpatterns = [
 
     #this is for the news - link
     path('news/', views.flatpage, {'url': '/news/'}, name='news'),
-    path('news/news-augustbuwan/', views.flatpage, {'url': '/news/news-augustbuwan'}, name='news-august'),
+    path('news/news-augustbuwan/', views.flatpage, {'url': '/news/news-augustbuwan'}, name='news-augustbuwan'),
     path('news/news-familymonth', views.flatpage, {'url': '/news/news-familymonth'}, name='news-familymonth'),
     path('news/news-julynutrition', views.flatpage, {'url': '/news/news-julynutrition'}, name='news-julynutrition'),
     path('news/news-midyearmusical', views.flatpage, {'url': '/news/news-midyearmusical'}, name='news-midyearmusical'),
@@ -68,7 +68,7 @@ urlpatterns = [
     path('news/news-psap', views.flatpage, {'url': '/news/news-psap'}, name='news-psap'),
     #accounts management
 
-    
+
 
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
