@@ -44,6 +44,16 @@ urlpatterns = [
     path('news/', views.flatpage, {'url': '/news/'}, name='news'),
     path('blog/', views.flatpage, {'url': '/blog/'}, name='blog'),
 
+    # try to put here
+
+    path('courses/gradeschool/', views.flatpage, {'url': '/courses/gradeschool/'}, name='gradeschool'),
+
+    path('courses/highschoolprogram/', views.flatpage, {'url': '/courses/highschoolprogram/'}, name='highschool'),
+    path('courses/homestudyprogram/', views.flatpage, {'url': '/courses/homestudyprogram/'}, name='homestudy'),
+    path('courses/englishlanguage/', views.flatpage, {'url': '/courses/englishlanguage/'}, name='englishlanguage'),
+
+    path('courses/senior/', views.flatpage, {'url': '/courses/senior/'}, name='senior'),
+
 
     #this is for the news - link
     path('news/news-augustbuwan/', views.flatpage, {'url': '/news/news-augustbuwan/'}, name='news-augustbuwan'),
@@ -66,13 +76,7 @@ urlpatterns = [
     path('courses/casa/', views.flatpage, {'url': '/courses/casa/'}, name='casa'),
     path('courses/sped/', views.flatpage, {'url': '/courses/sped/'}, name='sped'),
 
-    path('courses/gradeschool/', views.flatpage, {'url': '/courses/gradeschool/'}, name='gradeschool'),
-
-    path('courses/highschoolprogram/', views.flatpage, {'url': '/courses/highschoolprogram/'}, name='highschool'),
-    path('courses/homestudyprogram/', views.flatpage, {'url': '/courses/homestudyprogram/'}, name='homestudy'),
-    path('courses/englishlanguage/', views.flatpage, {'url': '/courses/englishlanguage/'}, name='englishlanguage'),
-
-    path('courses/senior/', views.flatpage, {'url': '/courses/senior/'}, name='senior'),
+    
     path('courses/test/', views.flatpage, {'url': '/courses/test/'}, name='test'),
     path('applyonline/', views.flatpage, {'url': '/applyonline/'}, name='applyonline'),
     
