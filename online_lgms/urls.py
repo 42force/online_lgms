@@ -65,7 +65,9 @@ urlpatterns = [
     path('terms/', views.flatpage, {'url': '/terms/'}, name='terms'),
     path('courses/casa/', views.flatpage, {'url': '/courses/casa/'}, name='casa'),
     path('courses/sped/', views.flatpage, {'url': '/courses/sped/'}, name='sped'),
+
     path('courses/gradeschool/', views.flatpage, {'url': '/courses/gradeschool/'}, name='gradeschool'),
+
     path('courses/highschoolprogram/', views.flatpage, {'url': '/courses/highschoolprogram/'}, name='highschool'),
     path('courses/homestudyprogram/', views.flatpage, {'url': '/courses/homestudyprogram/'}, name='homestudy'),
     path('courses/englishlanguage/', views.flatpage, {'url': '/courses/englishlanguage/'}, name='englishlanguage'),
