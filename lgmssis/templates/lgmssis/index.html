@@ -302,7 +302,7 @@
           {% load static %}
           <figure> <img src="{%static "lgmssis/images/dreampalace.jpg"%}" class="img-responsive">
             <figcaption>
-              <div class="cnt-block"> <a href="news.html" class="plus-icon">+</a>
+              <div class="cnt-block"> <a href="{% url 'news' %}" class="plus-icon">+</a>
                 <h3>Latest Events for PSAP 2019</h3>
                 <div class="bottom-block clearfix">
                   <div class="date">
@@ -324,7 +324,7 @@
           {% load static %}
           <figure> <img src="{% static "lgmssis/images/sc4.jpg"%}" class="img-responsive">
             <figcaption>
-              <div class="cnt-block"> <a href="news.html" class="plus-icon">+</a>
+              <div class="cnt-block"> <a href="{% url 'news' %}" class="plus-icon">+</a>
                 <h3>National Safety Kids 2019</h3>
                 <div class="bottom-block clearfix">
                   <div class="date">
@@ -346,7 +346,7 @@
           {% load static %}
           <figure> <img src="{% static "lgmssis/images/sc57.jpg"%}" class="img-responsive">
             <figcaption>
-              <div class="cnt-block"> <a href="news.html" class="plus-icon">+</a>
+              <div class="cnt-block"> <a href="{% url 'news' %}" class="plus-icon">+</a>
                 <h3>Family Month 2019</h3>
                 <div class="bottom-block clearfix">
                   <div class="date">
@@ -364,7 +364,7 @@
         </div>
       </li>
     </ul>
-    <div class="know-more-wrapper"> <a href="news.html" class="know-more">More Post <span class="icon-more-icon"></span></a> </div>
+    <div class="know-more-wrapper"> <a href="{% url 'news' %}" class="know-more">More Post <span class="icon-more-icon"></span></a> </div>
   </div>
 </section>
 <!-- End New & Events Section -->
