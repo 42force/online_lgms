@@ -64,11 +64,17 @@ urlpatterns = [
     path('terms/', views.flatpage, {'url': '/terms/'}, name='terms'),
     path('courses/casa/', views.flatpage, {'url': '/courses/casa/'}, name='casa'),
     path('courses/sped/', views.flatpage, {'url': '/courses/sped/'}, name='sped'),
-    path('courses/elementary/', views.flatpage, {'url': '/courses/elementary/'}, name='elementary'),
-    path('courses/junior/', views.flatpage, {'url': '/courses/junior/'}, name='junior'),
+    path('courses/gradeschool/', views.flatpage, {'url': '/courses/gradeschool/'}, name='gradeschool'),
+    path('courses/highschoolprogram/', views.flatpage, {'url': '/courses/highschoolprogram/'}, name='highschool'),
+    path('courses/homestudyprogram/', views.flatpage, {'url': '/courses/homestudyprogram/'}, name='homestudy'),
+    path('courses/englishlanguage/', views.flatpage, {'url': '/courses/englishlanguage/'}, name='englishlanguage'),
+
     path('courses/senior/', views.flatpage, {'url': '/courses/senior/'}, name='senior'),
     path('courses/test/', views.flatpage, {'url': '/courses/test/'}, name='test'),
     path('applyonline/', views.flatpage, {'url': '/applyonline/'}, name='applyonline'),
+    path('blog/', views.flatpage, {'url': '/blog/'}, name='blog'),
+
+    path('register/', views.flatpage, {'url': '/register/'}, name='register'),
 
     
 

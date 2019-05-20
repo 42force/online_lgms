@@ -77,9 +77,9 @@
         <div class="right-block clearfix">
           <ul class="top-nav hidden-xs">
             <li><a href="{% url 'login' %}">Register</a></li>
-            <li><a href="apply-online.html">Apply Online</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="faq1.html">FAQs</a></li>
+            <li><a href="{% url 'applyonline' %}">Apply Online</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li><a href="{% url 'faq1' %}">FAQs</a></li>
           </ul>
           <div class="lang-wrapper">
             <div class="select-lang">
@@ -140,18 +140,20 @@
                 <li><a href="{% url 'courses' %}">Courses Offered</a></li>
                 <li><a href="{% url 'casa' %}">CASA</a></li>
                 <li><a href="{% url 'sped'%}">SPED</a></li>
-                <li><a href="{% url 'elementary' %}">ELEMENTARY</a></li>
-                <li><a href="{% url 'junior' %}">JUNIOR HIGH</a></li>
-                <li><a href="{% url 'senior' %}">SENIOR HIGH</a></li>
+                <li><a href="{% url 'gradeschool' %}">Grade School</a></li>
+                <li><a href="{% url 'highschool' %}">High School</a></li>
+                <li><a href="{% url 'homestudy' %}">HomeStudy</a></li>
+                <li><a href="{% url 'englishlanguage' %}">English Language</a></li>
+                <li><a href="{% url 'sped' %}">Special Education</a></li>
               </ul>
             </li>
             <li> <a href="{% url 'gallery' %}">Gallery</a></li>
             <li class="dropdown"> <a data-toggle="dropdown" href="#">Sections <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
-                <li class="visible-xs"><a href="register.html">Register</a></li>
-                <li class="visible-xs"><a href="apply-online.html">Apply online</a></li>
-                <li class="visible-xs"><a href="blog.html">Blog</a></li>
-                <li class="visible-xs"><a href="faq.html">FAQs</a></li>
+                <li class="visible-xs"><a href="{% url 'register' %}">Register</a></li>
+                <li class="visible-xs"><a href="{% url 'applyonline' %}">Apply online</a></li>
+                <li class="visible-xs"><a href="{ % url 'blog'%}">Blog</a></li>
+                <li class="visible-xs"><a href="{% url 'faq1' %}">FAQs</a></li>
                 <li><a href="{% url 'news' %}">Latest News</a></li>
                 <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
                 <li><a href="{% url 'faq1' %}">FAQ 1</a></li>
@@ -179,7 +181,7 @@
             <div class="fl-right">
               <h1 class="animated fadeInRight">Empowering The Child to Strive  <span class="animated fadeInRight">For Excellence</span> </h1>
               <p class="animated fadeInRight">Check what LGMS has to offer.</p>
-              <a href="about.html" class="btn animated fadeInRight">Know More <span class="icon-more-icon"></span></a>
+              <a href="{% url 'about' %}" class="btn animated fadeInRight">Know More <span class="icon-more-icon"></span></a>
             </div>
           </div>
         </div>
@@ -273,13 +275,12 @@
             <h3>Courses</h3>
             <ul>
               <li><a href="#">Course Listing</a></li>
-              <li><a href="#">CASA</a></li>
-              <li><a href="#">SPED</a></li>
-              <li><a href="#">Elementary</a></li>
-              <li><a href="#">Junior High School</a></li>
-              <li><a href="#">Senior High School</a></li>
-              <li><a href="#">SHS - ABM</li>
-              <li><a href="#">SHS - GAS</li>
+              <li><a href="{% url 'casa' %}">CASA</a></li>
+              <li><a href="{% url 'gradeschool' %}">GRADE SCHOOL PROGRAM</a></li>
+              <li><a href="{% url 'highschool' %}">HIGH SCHOOL PROGRAM</a></li>
+              <li><a href="{% url 'homestudy'%}">HOME STUDY PROGRAM</a></li>
+              <li><a href="{% url 'englishlanguage' %}">English Language Program</a></li>
+              <li><a href="{% url 'sped' %}">Special Education Program</li>
             </ul>
           </div>
           <div class="foot-nav">
