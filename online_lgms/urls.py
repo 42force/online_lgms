@@ -42,6 +42,7 @@ urlpatterns = [
     path('gallery/', views.flatpage, {'url': '/gallery/'}, name='gallery'),
     path('contact/', views.flatpage, {'url': '/contact/'}, name='contact'),
     path('news/', views.flatpage, {'url': '/news/'}, name='news'),
+    path('blog/', views.flatpage, {'url': '/blog/'}, name='blog'),
 
 
     #this is for the news - link
@@ -55,7 +56,7 @@ urlpatterns = [
     path('news/news-psap/', views.flatpage, {'url': '/news/news-psap/'}, name='news-psap'),
     #accounts management
 
-    path('blog/', views.flatpage, {'url': '/blog/'}, name='blog'),
+    
     path('faq1/', views.flatpage, {'url': '/faq1/'}, name='faq1'),
     path('faq2/', views.flatpage, {'url': '/faq2/'}, name='faq2'),
     path('testimonials/', views.flatpage, {'url': '/testimonials/'}, name='testimonials'),
