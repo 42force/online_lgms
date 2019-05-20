@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+{% load static %}
+
 <!-- Start Banner -->
 <div class="inner-banner blog">
   <div class="container">
@@ -21,7 +23,7 @@
   <div class="container">
     <ul class="row news-listing">
       <li class="col-xs-6 col-sm-4 grid-item">
-        <div class="inner"> <img src="images/news1.jpg" class="img-responsive" alt="">
+        <div class="inner"> <img src="{% static 'lgmssis/images/sem59.jpg' %}" class="img-responsive" alt="">
           <div class="cnt-block">
             <ul class="post-detail">
               <li><span class="icon-date-icon ico"></span> <span class="bold">14 Feb</span> 2017</li>
@@ -48,7 +50,7 @@
         </div>
       </li>
       <li class="col-xs-6 col-sm-4 grid-item">
-        <div class="inner"> <img src="images/news5.jpg" class="img-responsive" alt="">
+        <div class="inner"> <img src="{% static 'lgmssis/images/julyactivity9.jpg' %}" class="img-responsive" alt="">
           <div class="cnt-block">
             <ul class="post-detail">
               <li><span class="icon-date-icon ico"></span> <span class="bold">14 Feb</span> 2017</li>
@@ -61,7 +63,7 @@
         </div>
       </li>
       <li class="col-xs-6 col-sm-4 grid-item">
-        <div class="inner"> <img src="images/news3.jpg" class="img-responsive" alt="">
+        <div class="inner"> <img src="{% static 'lgmssis/images/promball.jpg' %}" class="img-responsive" alt="">
           <div class="cnt-block">
             <ul class="post-detail">
               <li><span class="icon-date-icon ico"></span> <span class="bold">14 Feb</span> 2017</li>
@@ -103,7 +105,7 @@
         </div>
       </li>
       <li class="col-xs-6 col-sm-4 grid-item">
-        <div class="inner"> <img src="images/news2.jpg" class="img-responsive" alt="">
+        <div class="inner"> <img src="{% static 'lgmssis/images/psap.jpg' %}" class="img-responsive" alt="">
           <div class="cnt-block">
             <ul class="post-detail">
               <li><span class="icon-date-icon ico"></span> <span class="bold">14 Feb</span> 2017</li>
