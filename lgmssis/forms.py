@@ -16,8 +16,9 @@ class DateForm(forms.Form):
     )
 
 
-class EnquireForm(forms.Form):
+class EnquireForm(forms.ModelForm):
     model = Enquire
+    fields = ('fullname', 'email', 'mobile', 'place', 'programme')
 
     
 

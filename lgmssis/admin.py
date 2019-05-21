@@ -4,7 +4,7 @@ from django.contrib.flatpages.models import FlatPage
 from django.utils.translation import gettext_lazy as _
 from django.contrib.admin import AdminSite
 
-from .models import CountryOption, Applicant
+from .models import CountryOption, Applicant, Enquire
 
 admin.site.site_header = 'Learning Garden Montessori Administration'
 
@@ -34,7 +34,14 @@ class ApplicantAdmin(admin.ModelAdmin):
     list_display = ['id', 'fname', 'lname']
 
 
+class EnquireAdmin(admin.ModelAdmin):
+    list_display = ['id', 'fullname', 'email', 'mobilenumber', 'place', 'programme']
+
+
+
+
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, FlatPageAdmin)
 admin.site.register(CountryOption, CountryOptionAdmin)
 admin.site.register(Applicant, ApplicantAdmin)
+admin.site.register(Enquire, EnquireAdmin)

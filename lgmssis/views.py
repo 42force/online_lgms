@@ -18,16 +18,16 @@ def indexpage(request):
 
 #this is for enquire form
 def enquire_form(request):
-    if request.method == 'POST':
-
+    if request.method == "POST":
         form = EnquireForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/thanks/')
-
+            post = form.save(commit=False)
+            post.save()
+            return render(request,'home')
     else:
         form = EnquireForm()
+    return render(request, 'flatpages/contact.html', {'form' : form} )
 
-    return render(request,'flatpages/contact.html', {'form' : form })
 
 
 
@@ -39,9 +39,6 @@ def register(request):
         else:
             form = ApplyForm()
             return render(request,'flatpages/apply-online.html')
-
-
-
 
 
 class SignUp(generic.CreateView):

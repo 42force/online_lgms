@@ -25,7 +25,7 @@ class Applicant(models.Model):
     zip = models.IntegerField('Zip Code', blank=True, null=True)
     country_of_birth = models.ForeignKey(CountryOption, blank=True, null=True, on_delete=models.CASCADE)
     mobilenumber = PhoneNumberField('Mobile Number',help_text='MOBILE FORMAT : +639178888888', blank=True)
-    email = models.EmailField(unique=True)
+    email = models.EmailField(unique=True, null=True, blank=True)
 
     programtype = {('CASA', 'CASA'),
         ('SPED', 'SPED'),
@@ -45,13 +45,14 @@ class Applicant(models.Model):
     
     howdidyouhear = models.CharField(max_length=20, choices=programtype, blank=True, default='FACEBOOK', help_text="How did you hear about us?")
 
-    graddate = models.DateField(blank=False)
+    graddate = models.DateField(auto_now=True)
 
 
 
 class Enquire(models.Model):
     fullname =  models.CharField(max_length=255, verbose_name="Complete Name", blank=True, null=True)
-    email = models.EmailField(unique=True)
+    email = models.EmailField(unique=True, blank=True, null=True)
+    mobilenumber = PhoneNumberField('Mobile Number',help_text='MOBILE FORMAT : +639178888888', blank=True, null=True)
     place = models.CharField(max_length=255, verbose_name="Place or City", blank=True, null=True)
     programme = models.CharField(max_length=255, verbose_name="Course or Programme", blank=True, null=True)
 
