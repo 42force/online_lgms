@@ -44,6 +44,8 @@
                         <div class="enquire-wrapper">
                             <figure class="hidden-xs hidden-sm"><img src="images/course-img.jpg" class="img-responsive" alt=""></figure>
                             <div class="enquire-now">
+                                {% csrf_token %}
+                                {{ form }}
                                 <div class="inner">
                                     <h3>Enquire now</h3>
                                     <div class="row1">
@@ -351,7 +353,7 @@
                     <li class="col-sm-4 active">
                         <div class="icon-block"> <span class="num">3</span> <img src="{% static "lgmssis/images/get-start-ico.png"%}" alt=""></div>
                         <h3>Get started now</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p></p>
                     </li>
                 </ul>
                 <div class="button-wrapper"> <a href="apply-online.html" class="btn">apply now <span class="icon-more-icon"></span></a> </div>
@@ -360,7 +362,7 @@
         <!-- End How to Apply -->
 
         <!-- Start Comments -->
-        <section class="comments-wrapper padding-lg">
+        <!-- <section class="comments-wrapper padding-lg">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -407,7 +409,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- End Comments -->
 
         

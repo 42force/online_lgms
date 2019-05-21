@@ -28,6 +28,8 @@ class FlatPageAdmin(FlatPageAdmin):
 class CountryOptionAdmin(admin.ModelAdmin):
     list_display = ['id', 'name']
 
+
+
 class ApplicantAdmin(admin.ModelAdmin):
     list_display = ['id', 'fname', 'lname']
 
@@ -35,3 +37,4 @@ class ApplicantAdmin(admin.ModelAdmin):
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, FlatPageAdmin)
 admin.site.register(CountryOption, CountryOptionAdmin)
+admin.site.register(Applicant, ApplicantAdmin)

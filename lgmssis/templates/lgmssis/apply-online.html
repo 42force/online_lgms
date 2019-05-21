@@ -30,6 +30,8 @@
         <script src="js/html5shiv.min.js"></script>
         <script src="js/respond.min.js"></script>
         <![endif]-->
+
+
 </head>
 
 <body class="fill-bg">
@@ -46,7 +48,7 @@
     </div>
   </div>
   <!-- End Preloader -->
-
+{% csrf token %}
   <!-- Start apply online -->
   <section class="login-wrapper register">
     <div class="inner">
@@ -120,9 +122,14 @@
                 </select>
               </div>
               <div class="col-sm-6">
-                <div class="date">
+                {% csrf token %}
+                <div class="input group date" id="datetimepicker1" data-target-input="nearest">
+                  {{ form.date }}
+                  <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                   <input type='text' class="datepicker" placeholder="Graduation Year" />
-                  <span class="icon-calander-icon"></span> </div>
+                  <span class="icon-calander-icon"></span> 
+                </div>
               </div>
             </div>
             <div class="row">
@@ -202,6 +209,16 @@
   <script src="assets/datepicker/js/datepicker.js"></script>
   <!-- Custom JS -->
   <script src="js/custom.js"></script>
+
+  <!-- this is for the date picker form -->
+
+  <script>
+      $(function () {
+      $("#datetimepicker1").datetimepicker({
+        format: 'DD/MM/YYYY HH:mm',
+      });
+    });
+  </script>
 </body>
 
 </html>
