@@ -18,7 +18,6 @@ class DateForm(forms.Form):
 
 class EnquireForm(forms.Form):
     model = Enquire
-    fields 
 
     
 
