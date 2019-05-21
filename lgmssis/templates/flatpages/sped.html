@@ -11,7 +11,7 @@
                             <p>Apply Now.</p>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-lg-3"> <a href="apply-online.html" class="apply-online clearfix">
+                    <div class="col-sm-4 col-lg-3"> <a href="{% url 'applyonline' %}" class="apply-online clearfix">
                         <div class="left clearfix"> <span class="icon"><img src="{% static "lgmssis/images/apply-online-sm-ico.png" %}" class="img-responsive" alt=""></span> <span class="txt">Apply Online</span> </div>
                         <div class="arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
                         </a> <a href="https://drive.google.com/open?id=1_JSOuEBc3KAq_XAiF0lTOOQfQAvZGt6F" class="download-prospects brochure"> <span class="icon-brochure-icon"></span> <span class="small">Download:</span>Course Brochure</a> </div>
@@ -253,7 +253,7 @@
                                         <figure> <img src="{% static "lgmssis/images/dumadag.jpg" %}" alt="" width="123" height="124"> </figure>
                                         <h3>Ms. Alfreda A. Dumadag</h3>
                                         <span class="designation">Math Teacher</span>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
+                                        <p>Been in the Industry since 2000.</p>
                                         <ul class="teachers-follow">
                                             <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                             <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -264,7 +264,7 @@
                                         <figure> <img src="{% static "lgmssis/images/kid.png" %}" alt="" width="123" height="124"> </figure>
                                         <h3>Ms. Ana Buenaventura</h3>
                                         <span class="designation">Senior Lecturor</span>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
+                                        <p></p>
                                         <ul class="teachers-follow">
                                             <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                             <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -309,13 +309,13 @@
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </li>
                 </ul>
-                <div class="button-wrapper"> <a href="apply-online.html" class="btn">apply now <span class="icon-more-icon"></span></a> </div>
+                <div class="button-wrapper"> <a href="{% url 'applyonline'%}" class="btn">apply now <span class="icon-more-icon"></span></a> </div>
             </div>
         </section>
         <!-- End How to Apply -->
 
         <!-- Start Comments -->
-        <section class="comments-wrapper padding-lg">
+        <!-- <section class="comments-wrapper padding-lg">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -362,6 +362,6 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- End Comments -->
 {% endblock %}

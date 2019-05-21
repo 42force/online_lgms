@@ -59,17 +59,16 @@
         </ul>
         <div class="right-block clearfix">
           <ul class="top-nav hidden-xs">
-            <li><a href="register.html">Register</a></li>
-            <li><a href="apply-online.html">Apply Online</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="faq1.html">FAQs</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'applyonline' %}">Apply Online</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li><a href="{% url 'faq1' %}">FAQs</a></li>
           </ul>
           <div class="lang-wrapper">
             <div class="select-lang">
               <select id="currency_select">
-                <option value="usd">USD</option>
-                <option value="aud">AUD</option>
-                <option value="gbp">GBP</option>
+                <option value="usd">PHP</option>
+
               </select>
             </div>
             <div class="select-lang2">
