@@ -261,11 +261,10 @@
           <div class="foot-nav">
             <h3>About US</h3>
             <ul>
-              <li><a href="#">Learning Garden Institute</a></li>
-              <li><a href="#">Our Institutes and Universities</a></li>
-              <li><a href="#">Management Team</a></li>
-              <li><a href="#">Approval and Recognition</a></li>
-              <li><a href="#">Evaluation & Assessments</a></li>
+              <li><a href="{% url 'about' %}">Learning Garden Institute</a></li>
+              <li><a href="{% url 'about' %}">Management Team</a></li>
+              <li><a href="{% url 'casa' %}">Approval and Recognition</a></li>
+              <li><a href="{% url 'applyonline' %}">Evaluation & Assessments</a></li>
             </ul>
           </div>
           <div class="foot-nav">
@@ -296,7 +295,7 @@
           </div>
         </div>
         <div class="col-sm-3">
-          <div class="footer-logo hidden-xs"><a href="index.html"><img src="{% static "lgmssis/images/lgms_smal.jpg"%}" class="img-responsive" alt=""></a></div>
+          <div class="footer-logo hidden-xs"><a href="index.html"><img src="{%static "lgmssis/images/lgmssmalllogo.jpg"%}" class="img-responsive" alt=""></a></div>
           <p>© 2019 <span>LGMS</span>. All rights reserved</p>
           <ul class="terms clearfix">
             <li><a href="{% url 'terms'%}">TERMS OF USE</a></li>
@@ -328,13 +327,13 @@
               <h3>Subscribe with Us</h3>
               <!-- Begin MailChimp Signup Form -->
               <div id="mc_embed_signup">
-                <form action="//protechtheme.us16.list-manage.com/subscribe/post?u=cd5f66d2922f9e808f57e7d42&amp;id=ec6767feee" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+                <form action="https://gmail.us20.list-manage.com/subscribe/post?u=81d3e788f1fe9a6ae8ea470a2&amp;id=59f821aa39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
                   novalidate>
                   <div id="mc_embed_signup_scroll">
                     <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="enter your email address" required>
                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                     <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                      <input type="text" name="b_cd5f66d2922f9e808f57e7d42_ec6767feee" tabindex="-1" value="">
+                      <input type="text" name="b_81d3e788f1fe9a6ae8ea470a2_59f821aa39" tabindex="-1" value="">
                     </div>
                     <div class="clear">
                       <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
@@ -342,7 +341,13 @@
                   </div>
                 </form>
               </div>
+              <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
               <!--End mc_embed_signup-->
+
+
+              <!-- embedded testing -->
+              
+              <!-- embedded above  -->
             </div>
           </div>
           <div class="col-sm-4">
