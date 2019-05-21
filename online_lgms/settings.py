@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'lgmssis.apps.LgmssisConfig',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'phonenumber_field',
 
 ]
 
@@ -160,3 +161,5 @@ USE_TZ = True
 #STATIC_ROOT = '/Users/wackygalang/Projects/clones/online_lgms/staticfiles'
 STATIC_ROOT = 'wackyproject/project/clones/online_lgms/staticfiles'
 STATIC_URL = '/static/'
+
+ADMISSIONS_DEFAULT_COUNTRY = "Philippines"
