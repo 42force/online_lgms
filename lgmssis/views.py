@@ -15,7 +15,6 @@ def indexpage(request):
     return render(request, 'lgmssis/index.html')
 
 
-
 #this is for enquire form
 def enquire_form(request):
     if request.method == "POST":
