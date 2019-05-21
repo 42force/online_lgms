@@ -19,14 +19,13 @@ class CountryOption(models.Model):
 
 
 class Applicant(models.Model):
-    pass
-    # fname = models.CharField(max_length=255, verbose_name="First Name")
-    # lname = models.CharField(max_length=255, verbose_name="Last Name")
-    # streetname = models.CharField(max_length=255, verbose_name="Street Name")
-    # cityname = models.CharField(max_length=255, verbose_name="City Name")
-    # zip = models.IntegerField('Zip Code', blank=True, null=True)
-    # country_of_birth = models.ForeignKey(CountryOption, blank=True, null=True, on_delete=models.CASCADE)
-    # mobilenumber = PhoneNumberField('Mobile Number',help_text='MOBILE FORMAT : +639178888888', blank=True)
+    fname = models.CharField(max_length=255, verbose_name="First Name", blank=True, null=True)
+    lname = models.CharField(max_length=255, verbose_name="Last Name", blank=True, null=True)
+    streetname = models.CharField(max_length=255, verbose_name="Street Name", blank=True, null=True)
+    cityname = models.CharField(max_length=255, verbose_name="City Name", blank=True, null=True)
+    zip = models.IntegerField('Zip Code', blank=True, null=True)
+    country_of_birth = models.ForeignKey(CountryOption, blank=True, null=True, on_delete=models.CASCADE)
+    mobilenumber = PhoneNumberField('Mobile Number',help_text='MOBILE FORMAT : +639178888888', blank=True)
  
     
 
