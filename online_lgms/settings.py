@@ -36,8 +36,8 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
 
-    # 'jet.dashboard',
-    # 'jet',
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'crispy_forms',
 
 ]
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
 SITE_ID = 1
 
