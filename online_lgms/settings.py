@@ -167,3 +167,7 @@ STATIC_ROOT = 'wackyproject/project/clones/online_lgms/staticfiles'
 STATIC_URL = '/static/'
 
 ADMISSIONS_DEFAULT_COUNTRY = "Philippines"
+
+
+#test of settings only - should be home but changed to home
+LOGIN_REDIRECT_URL = 'home'
