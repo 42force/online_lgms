@@ -20,6 +20,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.flatpages import views
 
+from users import views as user_views
+
 
 
 urlpatterns = [
@@ -31,6 +33,9 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/lgmssis/', permanent=True)),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+
+    #path for users app - reason we put comma because it is a list 
+    path('register/', user_views.register, name='register'),
 
     #path('accounts/login/', auth_views.LoginView.as_view(template_name='lgmssis/login.html')),
 

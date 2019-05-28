@@ -4,6 +4,7 @@ from .models import Applicant, Enquire
 
 class ApplyForm(forms.Form):
     model = Applicant
+    fields = ()
 
 
 class DateForm(forms.Form):

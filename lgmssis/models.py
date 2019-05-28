@@ -58,6 +58,9 @@ class Enquire(models.Model):
 
 
 
+#class UserRegistration(models.Model):
+
+    
 
 
 
