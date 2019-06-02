@@ -6,7 +6,7 @@ from django.contrib.admin import AdminSite
 
 from django.conf import settings
 
-from reversion.admin import VersionAdmin
+#from reversion.admin import VersionAdmin
 #from lgmssis.helper_functions import ReadPermissionModelAdmin, CustomFieldAdmin
 
 from .models import CountryOption, Applicant, Enquire, StudentHealthRecord, Student, Cohort
