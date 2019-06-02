@@ -50,7 +50,6 @@ urlpatterns = [
 
     path('apply_online/', user_views.apply_online, name='apply_online'),
     #path('accounts/login/', auth_views.LoginView.as_view(template_name='lgmssis/login.html')),
-
     #this is for the flatpages
     path('home/', views.flatpage, {'url': '/home/'}, name='home'),
     path('page/', views.flatpage, {'url': '/page/'}, name='page'),
