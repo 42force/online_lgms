@@ -35,11 +35,20 @@ urlpatterns = [
     path('pages/', include('django.contrib.flatpages.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 
+
+    #path for applicants testing 
+    
+
     #path for users app - reason we put comma because it is a list 
     path('register/', user_views.register, name='register'),
+    path('register/students', user_views.register_students, name='register_students'),
+    path('register/teachers', user_views.register_teachers, name='register_teachers'),
+    path('register/parents', user_views.register_parents, name='register_parents'),
+    path('profile/', user_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 
+    path('apply_online/', user_views.apply_online, name='apply_online'),
     #path('accounts/login/', auth_views.LoginView.as_view(template_name='lgmssis/login.html')),
 
     #this is for the flatpages
@@ -86,7 +95,7 @@ urlpatterns = [
 
     
     path('courses/test/', views.flatpage, {'url': '/courses/test/'}, name='test'),
-    path('applyonline/', views.flatpage, {'url': '/applyonline/'}, name='applyonline'),
+    #path('applyonline/', views.flatpage, {'url': '/applyonline/'}, name='applyonline'),
     
 
     path('register/', views.flatpage, {'url': '/register/'}, name='register'),

@@ -11,6 +11,7 @@ from .forms import ApplyForm, EnquireForm
 from django.shortcuts import render, redirect
 
 
+
 def indexpage(request):
     return render(request, 'lgmssis/index.html')
 

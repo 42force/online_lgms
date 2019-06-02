@@ -17,6 +17,7 @@
   <link href="{% static "lgmssis/css/reset.css" %}" rel="stylesheet">
   <!-- Custom Fonts -->
   <link href="{% static "lgmssis/css/fonts.css" %}" rel="stylesheet">
+  <link href="{% static "lgmssis/css/user-profile.css" %}" rel="stylesheet">
   <!-- Bootstrap -->
   <link href="{% static "lgmssis/assets/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
   <!-- Select2 -->
@@ -76,7 +77,7 @@
         </ul>
         <div class="right-block clearfix">
           <ul class="top-nav hidden-xs">
-            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Register</a></li>
             <li><a href="{% url 'apply_online' %}">Apply Online</a></li>
             <li><a href="{% url 'faq1' %}">FAQs</a></li>
           </ul>
@@ -112,9 +113,10 @@
               <li> <span>Toll Free</span> +632 703 0662 </li>
             </ul>
             {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}" class="profile">Profile <span class="icon-more-icon"></span></a>
             <a href="{% url 'logout' %}" class="login">Logout <span class="icon-more-icon"></span></a>
             {% else %}
-            <a href="{% url 'login' %}" class="login">Login <span class="icon-more-icon"></span></a>
+            <a href="{% url 'login' %}" class="logout">Login <span class="icon-more-icon"></span></a>
             {% endif %}
           </div>
         </div>
@@ -152,7 +154,7 @@
             <li class="dropdown"> <a data-toggle="dropdown" href="#">Sections <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
                 <li class="visible-xs"><a href="{% url 'register' %}">Register</a></li>
-                <li class="visible-xs"><a href="{% url 'applyonline' %}">Apply online</a></li>
+                <li class="visible-xs"><a href="{% url 'apply_online' %}">Apply online</a></li>
                 <li class="visible-xs"><a href="{% url 'blog' %}">Blog</a></li>
                 <li class="visible-xs"><a href="{% url 'faq1' %}">FAQs</a></li>
                 <li><a href="{% url 'news' %}">Latest News</a></li>
@@ -217,10 +219,11 @@
     {% endfor %}
   {% endif %}
   {% block content %}
+  
   {% endblock %}
   <!-- end of index html -->
   <!-- Start logos Section -->
-  {% load static %}
+  <!-- {% load static %}
   <section class="logos">
     <div class="container">
       <ul class="owl-carousel clearfix">
@@ -234,7 +237,7 @@
         <li><a href="#"><img src="{% static "lgmssis/images/lgms.png"%}" class="img-responsive" alt=""></a></li>
       </ul>
     </div>
-  </section>
+  </section> -->
   <!-- End logos Section -->
 
   <!-- Start Testimonial -->
@@ -275,7 +278,7 @@
               <li><a href="{% url 'about' %}">Learning Garden Institute</a></li>
               <li><a href="{% url 'about' %}">Management Team</a></li>
               <li><a href="{% url 'casa' %}">Approval and Recognition</a></li>
-              <li><a href="{% url 'applyonline' %}">Evaluation & Assessments</a></li>
+              <li><a href="{% url 'apply_online' %}">Evaluation & Assessments</a></li>
             </ul>
           </div>
           <div class="foot-nav">

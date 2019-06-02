@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+        <title>LGMS REGISTRATION</title>
+        
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        {% load static %}
+        <link href="{% static "lgmssis/css/reset.css" %}" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="{% static "lgmssis/css/fonts.css" %}" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="{% static "lgmssis/assets/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+        <!-- Select2 -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+        <!-- <link href="assets/select2/css/select2.min.css" rel="stylesheet"> -->
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <!-- <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"> -->
+        <!-- <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
+        <!-- Magnific Popup -->
+        <link href="{%static "lgmssis/assets/magnific-popup/css/magnific-popup.css" %}" rel="stylesheet">
+        <!-- Iconmoon -->
+        <link href="{%static "lgmssis/assets/iconmoon/css/iconmoon.css" %}" rel="stylesheet">
+        <!-- Iconmoon -->
+        <!-- bxslider css -->
+        <!-- <link rel="stylesheet" href="css/jquery.bxslider.css"> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+        <!-- bxslider css -->
+        <!-- Owl Carousel -->
+        <!-- <link href="assets/owl-carousel/css/owl.carousel.min.css" rel="stylesheet"> -->
+        <!-- Owl Carousel below is the one i inserted-->
+        <link rel="stylesheet" href="{%static "lgmssis/owlcarousel/owl.carousel.min.css"%}">
+        <link rel="stylesheet" href="{%static "lgmssis/owlcarousel/owl.theme.default.min.css"%}"> <!-- Animate -->
+        <link href="{%static "lgmssis/css/animate.css"%}" rel="stylesheet">
+        <!-- Custom Style -->
+        <link href="{%static "lgmssis/css/custom.css"%}" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+    </head>
+    <body class="fill-bg">
+
+        <!-- Start Preloader -->
+        <div id="loading">
+            <div class="element">
+                <div class="sk-folding-cube">
+                    <div class="sk-cube1 sk-cube"></div>
+                    <div class="sk-cube2 sk-cube"></div>
+                    <div class="sk-cube4 sk-cube"></div>
+                    <div class="sk-cube3 sk-cube"></div>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+
+        <!-- Start Register -->
+{% block content %}
+{% endblock %}
+       
+        <!-- End Register -->
+
+        <!-- Scroll to top -->
+            <a href="#" class="scroll-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            {% load static %}
+            <script src="{% static "lgmssis/js/jquery.min.js" %}"></script>
+            <!-- Bootsrap JS -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+            <!-- <script src="{% static "lgmssis/js/bootstrap.min.js" %}"></script> -->
+            <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+            <!-- Select2 JS -->
+            <!-- <script src="assets/select2/js/select2.min.js"></script> -->
+            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+            <!-- Match Height JS -->
+            {% load static %}
+            <script src="{% static "lgmssis/assets/matchHeight/js/matchHeight-min.js" %}"></script>
+            <!-- Bxslider JS -->
+
+            <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+            <!-- <script src="{% static "assets/bxslider/js/jquery.bxslider.min.js"%}"></script> -->
+            <!-- Waypoints  static "assets/waypoints/js/waypoints.min.js"%}"></script>
+            <! Counter Up JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+            {% load static %}
+            <script src="{% static "lgmssis/assets/counterup/js/counterup.min.js" %}"></script>
+            <!-- Magnific Popup JS -->
+            {% load static %}
+            <script src="{% static "lgmssis/assets/magnific-popup/js/magnific-popup.min.js" %}"></script>
+            <!-- Owl Carousal JS -->
+            <!-- <script src="{%static "assets/owl-carousel/js/owl.carousel.min.js"%}"></script> -->
+            <!-- <script src="{%static "jquery.min.js"%}"></script> -->
+            {% load static %}
+            <script src="{% static "lgmssis/owlcarousel/owl.carousel.min.js" %}"></script>
+            <!-- Modernizr JS -->
+            {% load static %}
+            <script src="{% static "lgmssis/js/modernizr.custom.js" %}"></script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpe2spShgjCJMPyokNNktU9g0-Lcyv2A4&sensor=false"></script>
+
+            <!-- Custom JS -->
+            {% load static %}
+            <script src="{%static "lgmssis/js/jquery.validate.min.js"%}"></script>
+
+            <!-- <script src="{%static "js/jquery.validate.min.js"%}"></script> -->
+
+            <script src="{% static "lgmssis/assets/masonry/js/masonry.min.js" %}"></script>
+
+            <script src="{% static "lgmssis/assets/datepicker/js/datepicker.js" %}"></script>
+
+            <script src="{% static "lgmssis/js/custom.js" %}"></script>
+
+
+            <!-- this is my injected from the net my corrections -wgmbg -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <!-- this is my injected from the net my corrections -wgmbg -->
+    </body>
+</html>

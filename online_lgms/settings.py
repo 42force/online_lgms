@@ -44,12 +44,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'lgmssis.apps.LgmssisConfig',
     'django.contrib.sites',
     'django.contrib.flatpages',
     'phonenumber_field',
     'crispy_forms',
     'users.apps.UsersConfig',
+    'lgmssis.apps.LgmssisConfig',
+    # 'lgmsschedule.apps.LgmsscheduleConfig',
+    # 'lgmstest.apps.LgmstestConfig',
+    # 'lgmsgrades.apps.LgmsgradesConfig',
+    # 'lgmsattendance.apps.LgmsattendanceConfig',
+    # 'lgmsadmin.apps.LgmsadminConfig',
+    
+    # 'lgmsdiscipline.apps.LgmsdisciplineConfig'
 
 ]
 
@@ -166,8 +173,32 @@ USE_TZ = True
 STATIC_ROOT = 'wackyproject/project/clones/online_lgms/staticfiles'
 STATIC_URL = '/static/'
 
+
+#uploaded files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'users/media')
+MEDIA_URL = '/media/'
+
 ADMISSIONS_DEFAULT_COUNTRY = "Philippines"
+
+
+#this has been added as a test because I am trying to implement a separate Group
+# AUTH_USER_MODEL = 'users.User'
 
 
 #test of settings only - should be home but changed to home
 LOGIN_REDIRECT_URL = 'home'
+
+LOGIN_URL = 'login'
+
+
+
+#for email 
+#EMAIL_BACKEND = ‘django.core.mail.backends.smtp.EmailBackend’
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'learninggardenmontessoridrive@gmail.com'
+EMAIL_HOST_PASSWORD = 'Foundation2000'
+
+
