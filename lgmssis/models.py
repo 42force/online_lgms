@@ -11,8 +11,6 @@ from datetime import date
 # Create your models here.
 
 
-
-
 class CountryOption(models.Model):
     name = models.CharField(max_length=500, blank=True, null=True)
 
@@ -116,6 +114,7 @@ class Student(models.Model):
         lrn_no = models.CharField('Learners Number', default="", max_length=64, blank=True)
 
 
+
 class StudentFile(models.Model):
     file = models.FileField(upload_to="student_files")
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
@@ -189,16 +188,6 @@ class Subjects(models.Model):
             verbose_name_plural = 'Subjects Lists Information'
 
 
-
-
-
-
-
-
-
-#created a model for Students
-
-#class UserRegistration(models.Model):
 
     
 

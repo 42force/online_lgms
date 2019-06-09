@@ -21,11 +21,8 @@ class UserRegisterForm(UserCreationForm):
         model = User 
         fields  = ['username', 'email', 'password1', 'password2',]
 
-# class GroupUpdateForm(forms.ModelForm):
-#     class Meta:
-#         model = Group
-#         fields = ['name']
 
+#this is for the profile update and change 
 class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
@@ -38,6 +35,25 @@ class ProfileUpdateForm(forms.ModelForm):
         model = Profile
         fields = [ 'image', 'zip', 'bio', 'cityname', 'country_of_birth', 'user']
         
+
+class ApplicationForm(forms.ModelForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = Application
+        fields = ['fname', 'lname', 'mobilenumber', 'streetname', 'country_of_birth', 'progoption', 'howdidyouhear' ]
+
+    
+
+
+
+
+
+
+
+
+
+
 
 # class TeachersUpdateForm(forms.ModelForm):
 #     class Meta:
@@ -60,14 +76,4 @@ class ProfileUpdateForm(forms.ModelForm):
 
 
 ###for applicants information only before admission####
-class ApplicationForm(forms.ModelForm):
-    email = forms.EmailField()
-
-    class Meta:
-        model = Application
-        fields = ['fname', 'lname', 'mobilenumber', 'streetname', 'country_of_birth', 'progoption', 'howdidyouhear' ]
-
-    
-
-
     
