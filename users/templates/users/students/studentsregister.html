@@ -6,13 +6,13 @@
             <div class="regiter-inner">
                 <div class="login-logo"> <a href="index.html"><img src="images/login-logo.png" class="img-responsive" alt=""></a> </div>
                 <div class="head-block">
-                    <h1>Students Registration Form</h1>
+                    <h1>Register  Now as a STUDENT</h1>
                 </div>
                 <div class="cnt-block">
                     <form method="POST" class="form-outer">
                         {% csrf_token %}
                     
-                        {{ form.as_p }}
+                        {{ suser_form.as_p }}
 
                         <div class="button-outer">
                             <button class="btn">Submit <span class="icon-more-icon"></span></button>

@@ -76,7 +76,13 @@
         </ul>
         <div class="right-block clearfix">
           <ul class="top-nav hidden-xs">
-            <li><a href="{% url 'register' %}">Register</a></li>
+            <li> <ul class="dropdown-menu">
+              <li><a href="{% url 'register' %}">Parents</a></li>
+              <li><a href="{% url 'register' %}">Students</a></li>
+              <li><a href="{% url 'register' %}">Teacher or Admin</a></li>
+            </ul>
+              
+            </li>
             <li><a href="{% url 'apply_online' %}">Apply Online</a></li>
             <li><a href="{% url 'faq1' %}">FAQs</a></li>
           </ul>

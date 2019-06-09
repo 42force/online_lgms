@@ -76,11 +76,11 @@
         </ul>
         <div class="right-block clearfix">
           <ul class="top-nav hidden-xs">
-            <li><a href="{% url 'register' %}">Register</a></li>
             <li><a href="{% url 'apply_online' %}">Apply Online</a></li>
+            <li><a href="{% url 'register' %}">Register an Account</a></li>
             <li><a href="{% url 'faq1' %}">FAQs</a></li>
           </ul>
-          <div class="lang-wrapper">
+          <!-- <div class="lang-wrapper">
             <div class="select-lang">
               <select id="currency_select">
                 <option value="php">PHP</option>
@@ -90,13 +90,16 @@
             </div>
             <div class="select-lang2">
               <select class="custom_select">
-                <option value="en">English</option>
+                <option value="en"> English
+                    
+                </option>
                 <option value="fr">French</option>
                 <option value="de">German</option>
               </select>
             </div>
-          </div>
+          </div> -->
         </div>
+
       </div>
     </div>
     <!-- End Header top Bar -->
@@ -119,6 +122,7 @@
           </div>
         </div>
       </div>
+      
     </div>
     <!-- End Header Middle -->
     <!-- Start Navigation -->
@@ -163,6 +167,15 @@
                 <li class="hidden-xs"><a href="{% url 'privacy' %}">Privacy Policy</a></li>
                 <li class="hidden-xs"><a href="{% url 'terms' %}">Terms of Use</a></li>
                 <li class="hidden-xs"><a href="{% url 'contact' %}">Contact Us</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"> <a data-toggle="dropdown" href="#">Registration <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+              <ul class="dropdown-menu">
+    
+                <li><a href="{% url 'register_parents' %}">Parents Registration</a></li>
+                <li><a href="{% url 'register_students' %}">Students Registration</a></li>
+                <li><a href="{% url 'register_teachers' %}">Teacher / Admin</a></li>
+    
               </ul>
             </li>
           </ul>

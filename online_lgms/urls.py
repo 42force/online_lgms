@@ -22,6 +22,7 @@ from django.contrib.flatpages import views
 from django.contrib.auth import views as auth_views
 
 from users import views as user_views
+from users.tempviews import students, teachers, parents
 
 
 
@@ -39,15 +40,27 @@ urlpatterns = [
     #path for applicants testing 
     
 
-    #path for users app - reason we put comma because it is a list 
+    #path for users app - reason we put comma because it is a list
     path('register/', user_views.register, name='register'),
-    path('register/students', user_views.register_students, name='register_students'),
-    path('register/teachers', user_views.register_teachers, name='register_teachers'),
-    path('register/parents', user_views.register_parents, name='register_parents'),
+    path('testregister/', user_views.testregister, name='testregister'), #testonly
+
+
+    #path for registration app for specific user
+    # path('register/students', user_views.register_students, name='register_students'),
+    # path('register/teachers', user_views.register_teachers, name='register_teachers'),
+    # path('register/parents', user_views.register_parents, name='register_parents'),
+
+
+    #path for profile
     path('profile/', user_views.profile, name='profile'),
+    # path('teachersprofile/', user_views.teachers_profile, name='teachers_profile'),
+    # path('studentsprofile/', user_views.students_profile, name='students_profile'),
+    # path('parentsprofile/', user_views.parents_profile, name='parents_profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 
+
+    # path('teachersprofile/', user_views.teachers_profile, name='teachers_profile'),
     path('apply_online/', user_views.apply_online, name='apply_online'),
     #path('accounts/login/', auth_views.LoginView.as_view(template_name='lgmssis/login.html')),
     #this is for the flatpages
@@ -59,6 +72,8 @@ urlpatterns = [
     path('contact/', views.flatpage, {'url': '/contact/'}, name='contact'),
     path('news/', views.flatpage, {'url': '/news/'}, name='news'),
     path('blog/', views.flatpage, {'url': '/blog/'}, name='blog'),
+    #for register options
+    path('registeroptions/', views.flatpage, {'url': '/registeroptions/'}, name='registeroptions'),
 
     # try to put here
 
@@ -98,5 +113,18 @@ urlpatterns = [
     
 
     path('register/', views.flatpage, {'url': '/register/'}, name='register'),
+
+
+    path('students/', include(([
+        #put views here
+    ], 'tempviews'), namespace='students')),
+    #
+    path('parents/', include(([
+        #put views here
+    ], 'tempviews'), namespace='parents')),
+
+    path('teachers/', include(([
+        #put views here
+    ], 'tempviews'), namespace='teachers')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

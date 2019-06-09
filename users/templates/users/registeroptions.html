@@ -1,0 +1,35 @@
+{% extends "base_registration.html"%}
+
+{% block content %}
+{% load static %}
+<section class="login-wrapper">
+        <div class="inner">
+            <div class="login">
+                <div class="login-logo"> <a href="{% url 'home' %}"><img src="{%static "lgmssis/images/lgmssmalllogo.jpg"%}"class="img-responsive" alt=""></a> </div>
+                <div class="head-block">
+                    <h4>Welcome!</h4>
+                    <br>
+                </div>
+
+                <div class="cnt-block">
+                    <div class="text-center"><h5>Please select the type of account</h5>
+                    <br></div>
+                        <div class="button-outer">
+                                <button class="btn" type="submit"> <a href="{% url 'register_students' %}">Register as a Student</a><span class="icon-more-icon"></span>
+                               </button>
+                            </div>
+                            <br>
+                        <div class="button-outer center">
+                                <button class="btn" type="submit"><a href="{% url 'register_teachers' %}">Register as a Parent</a> <span class="icon-more-icon"></span>
+                                </button>
+                        </div>
+                        <br>
+                        <div class="button-outer">
+                                <button class="btn" type="submit"><a href="{% url 'register_parents' %}">Register as a Faculty Member</a><span class="icon-more-icon"></span>
+                                </button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

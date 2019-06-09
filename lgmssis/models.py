@@ -4,9 +4,14 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 from django.contrib.auth.models import User, Group
 
+from django.contrib.auth.models import AbstractUser
 from datetime import date
 
+
 # Create your models here.
+
+
+
 
 class CountryOption(models.Model):
     name = models.CharField(max_length=500, blank=True, null=True)
@@ -61,8 +66,8 @@ class Enquire(models.Model):
 
 
 class Faculty(models.Model):
-        faculty_user = models.ForeignKey(User, on_delete=models.CASCADE)
-        alt_email = models.EmailField(blank=True)
+        faculty_users = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
+        altemail = models.EmailField(blank=True)
         number = models.IntegerField(blank=True)
         ext = models.CharField(max_length=10, blank=True, null=True)
         teacher = models.BooleanField()
@@ -106,11 +111,9 @@ class GradeLevel(models.Model):
 
 
 class Student(models.Model):
-        user_student = models.ForeignKey(User, on_delete=models.CASCADE )
-        sex = models.CharField(max_length=1, choices=(('M', 'Male'), ('F', 'Female')), blank=True, null=True)
-        bday = models.DateField(blank=True, null=True, verbose_name="Birth Date")
+        user_students = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
         year = models.ForeignKey(GradeLevel, blank=True, null=True, on_delete=models.CASCADE)
-        unique_id = models.IntegerField(blank=True, null=True, unique=True, help_text="For LEARNING NO")
+        lrn_no = models.CharField('Learners Number', default="", max_length=64, blank=True)
 
 
 class StudentFile(models.Model):
@@ -167,6 +170,30 @@ class Cohort(models.Model):
 
     def __unicode__(self):
         return unicode(self.name)
+
+#for subjects
+class Subjects(models.Model):
+        subjectname = models.CharField('Subject Name', blank=False, max_length=64)
+        color = models.CharField(max_length=64, default="#00b35c")
+
+        def __str__(self):
+            return '%s' % (self.subjectname)
+
+        def get_html_badge(self):
+            name = escape(self.subjectname)
+            color = escape(self.color)
+            html = '<span class="badge badge-primary" style="background-color: %s">%s</span>' % (color, subjectname)
+            return mark_safe(html)
+
+        class Meta:
+            verbose_name_plural = 'Subjects Lists Information'
+
+
+
+
+
+
+
 
 
 #created a model for Students

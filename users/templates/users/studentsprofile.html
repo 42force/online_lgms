@@ -56,10 +56,10 @@
                                             <span class="bigger-110">Add as a friend</span>
                                         </a>
             
-                                        <a href="#" class="btn btn-sm btn-block btn-primary">
+                                        <!-- <a href="#" class="btn btn-sm btn-block btn-primary">
                                             <i class="ace-icon fa fa-envelope-o bigger-110"></i>
                                             <span class="bigger-110">Send a message</span>
-                                        </a>
+                                        </a> -->
                                     </div><!-- /.col -->
             
                                     <div class="col-xs-12 col-sm-9">
@@ -77,7 +77,7 @@
                                                 <div class="profile-info-name"> Username </div>
             
                                                 <div class="profile-info-value">
-                                                    <span>alexdoe</span>
+                                                    <span>{{ user.username }}</span>
                                                 </div>
                                             </div>
             
@@ -86,8 +86,8 @@
             
                                                 <div class="profile-info-value">
                                                     <i class="fa fa-map-marker light-orange bigger-110"></i>
-                                                    <span>Netherlands</span>
-                                                    <span>Amsterdam</span>
+                                                    <span>{{ user.profile.cityname }}</span>
+                                                    <span>{{user.profile.country_of_birth}}</span>
                                                 </div>
                                             </div>
             
@@ -95,7 +95,7 @@
                                                 <div class="profile-info-name"> Age </div>
             
                                                 <div class="profile-info-value">
-                                                    <span>38</span>
+                                                    <span></span>
                                                 </div>
                                             </div>
             
@@ -108,10 +108,10 @@
                                             </div>
             
                                             <div class="profile-info-row">
-                                                <div class="profile-info-name"> Last Online </div>
+                                                <div class="profile-info-name"> Birthday </div>
             
                                                 <div class="profile-info-value">
-                                                    <span>3 hours ago</span>
+                                                    <span>{{user.profile.birth_date}}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -158,24 +158,16 @@
                                             <div class="widget-header widget-header-small">
                                                 <h4 class="widget-title smaller">
                                                     <i class="ace-icon fa fa-check-square-o bigger-110"></i>
-                                                    Little About Me
+                                                    My Biography
                                                 </h4>
                                             </div>
             
                                             <div class="widget-body">
                                                 <div class="widget-main">
                                                     <p>
-                                                        My job is mostly lorem ipsuming and dolor sit ameting as long as consectetur adipiscing elit.
+                                                        {{ user.profile.bio }}
                                                     </p>
-                                                    <p>
-                                                        Sometimes quisque commodo massa gets in the way and sed ipsum porttitor facilisis.
-                                                    </p>
-                                                    <p>
-                                                        The best thing about my job is that vestibulum id ligula porta felis euismod and nullam quis risus eget urna mollis ornare.
-                                                    </p>
-                                                    <p>
-                                                        Thanks for visiting my profile.
-                                                    </p>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -850,8 +842,8 @@
                                     <form method="POST" class="form-outer">
                                             {% csrf_token %}
                                         
-                                            {{ user_form.as_p }}
-                                            {{ profile_form.as_p }}
+                                            {{ user_form.as_ul }}
+                                            {{ profile_form.as_ul }}
                     
                                             <div class="button-outer">
                                                 <button class="btn">Submit <span class="icon-more-icon"></span></button>

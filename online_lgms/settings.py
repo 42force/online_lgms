@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'lgmssis.apps.LgmssisConfig',
     # 'lgmsschedule.apps.LgmsscheduleConfig',
     # 'lgmstest.apps.LgmstestConfig',
-    # 'lgmsgrades.apps.LgmsgradesConfig',
+     'lgmsgrades.apps.LgmsgradesConfig',
     # 'lgmsattendance.apps.LgmsattendanceConfig',
     # 'lgmsadmin.apps.LgmsadminConfig',
     
@@ -182,7 +182,7 @@ ADMISSIONS_DEFAULT_COUNTRY = "Philippines"
 
 
 #this has been added as a test because I am trying to implement a separate Group
-# AUTH_USER_MODEL = 'users.User'
+#AUTH_USER_MODEL = 'users.User'
 
 
 #test of settings only - should be home but changed to home

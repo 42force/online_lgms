@@ -4,6 +4,12 @@ from lgmssis.models import CountryOption
 from django.contrib.auth.forms import UserCreationForm
 from datetime import date
 
+
+# from django.contrib.auth import get_user_model
+
+# User = get_user_model()
+
+
 from .models import Profile, Application
 
 #THIS IS WHERE WE MODIFY ADD FORMS TO USER
@@ -11,11 +17,14 @@ from .models import Profile, Application
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
     
-
     class Meta:
         model = User 
         fields  = ['username', 'email', 'password1', 'password2',]
 
+# class GroupUpdateForm(forms.ModelForm):
+#     class Meta:
+#         model = Group
+#         fields = ['name']
 
 class UserUpdateForm(forms.ModelForm):
     class Meta:
@@ -28,17 +37,29 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = [ 'image', 'zip', 'bio', 'cityname', 'country_of_birth', 'user']
+        
 
-
-class TeachersUpdateForm(forms.ModelForm):
-    pass
-
-
-class ParentsUpdateForm(forms.ModelForm):
-    pass 
+# class TeachersUpdateForm(forms.ModelForm):
+#     class Meta:
+#         model = TeachersProfile
+#         fields = ['image_teachers', 'faculty_id', 'bio_teachers']
 
 
 
+# class ParentsUpdateForm(forms.ModelForm):
+#     class Meta:
+#         model = ParentsProfile
+#         fields = ['image_parents', 'bio_parents', 'streetname_parents', 'cityname_parents', 'zip_parents', 'country_of_birth_parents', 'mobilenumber_parents', 'birth_date_parents']
+
+
+# class StudentProfileUpdateForm(forms.ModelForm):
+#     class Meta:
+#         model = StudentProfile
+#         fields = ['user_student', 'image_student', 'birth_date', 'country_of_birth']
+
+
+
+###for applicants information only before admission####
 class ApplicationForm(forms.ModelForm):
     email = forms.EmailField()
 
