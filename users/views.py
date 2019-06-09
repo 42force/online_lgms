@@ -46,11 +46,10 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account has been created{username}!')
-            return redirect('home')
+            return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form' : form})
-
 
 ###########this is where we test####################
 
@@ -58,7 +57,7 @@ def register(request):
 
 
 @login_required
-def profile(request):
+def test_profile(request):
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileUpdateForm(request.POST, 
@@ -67,8 +66,6 @@ def profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
             user = profile_form.save()
-            group = Group.objects.get(name='TEACHERS')
-            user.groups.add(group)
             messages.success(request, f'Account has been updated!')
             return redirect('profile')
         else:
@@ -103,6 +100,23 @@ def testregister(request):
 def register_example(request):
     
     return render(request, 'users/students/studentsregister.html')
+
+
+
+
+################################################################
+
+@login_required
+def profile(request):
+    u_form = UserUpdateForm()
+    p_form = ProfileUpdateForm()
+
+    context = {
+        'u_form' : u_form,
+        'p_form' : p_form
+    }
+
+    return render(request, 'users/usersprofile.html', context)
 
 ###########this is where we test the register####################
 

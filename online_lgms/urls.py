@@ -59,7 +59,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 
-
+    path('login_home/', auth_views.LoginView.as_view(template_name='users/login_home.html'), name='login-home'),
     # path('teachersprofile/', user_views.teachers_profile, name='teachers_profile'),
     path('apply_online/', user_views.apply_online, name='apply_online'),
     #path('accounts/login/', auth_views.LoginView.as_view(template_name='lgmssis/login.html')),
@@ -75,6 +75,8 @@ urlpatterns = [
     #for register options
     path('registeroptions/', views.flatpage, {'url': '/registeroptions/'}, name='registeroptions'),
 
+    path('welcomehome/', views.flatpage, {'url': '/welcomehome/'}, name='welcomehome'),
+
     # try to put here
 
     path('courses/gradeschool/', views.flatpage, {'url': '/courses/gradeschool/'}, name='gradeschool'),
@@ -84,7 +86,7 @@ urlpatterns = [
 
     path('courses/senior/', views.flatpage, {'url': '/courses/senior/'}, name='senior'),
 
-
+    
     #this is for the news - link
     path('news/news-augustbuwan/', views.flatpage, {'url': '/news/news-augustbuwan/'}, name='news-augustbuwan'),
     path('news/news-familymonth/', views.flatpage, {'url': '/news/news-familymonth/'}, name='news-familymonth'),

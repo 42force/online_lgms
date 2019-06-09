@@ -113,12 +113,13 @@
               <li> <span>Email</span> <a href="mailto:lrng_garden_montessori@yahoo.com">info@lgms.ph</a> </li>
               <li> <span>Toll Free</span> +632 820 4064 </li>
               <li> <span>Toll Free</span> +632 703 0662 </li>
+              <li>{% if user.is_authenticated %}
+                  <a href="{% url 'logout' %}" class="login">Logout </a>
+                  {% else %}
+                  <a href="{% url 'login' %}" class="login">Login </a>
+                  {% endif %}</li>
             </ul>
-            {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}" class="login">Logout <span class="icon-more-icon"></span></a>
-            {% else %}
-            <a href="{% url 'login' %}" class="login">Login <span class="icon-more-icon"></span></a>
-            {% endif %}
+            
           </div>
         </div>
       </div>
@@ -169,12 +170,12 @@
                 <li class="hidden-xs"><a href="{% url 'contact' %}">Contact Us</a></li>
               </ul>
             </li>
-            <li class="dropdown"> <a data-toggle="dropdown" href="#">Registration <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <li class="dropdown"> <a data-toggle="dropdown" href="#"> Online Portal <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
     
-                <li><a href="{% url 'register_parents' %}">Parents Registration</a></li>
-                <li><a href="{% url 'register_students' %}">Students Registration</a></li>
-                <li><a href="{% url 'register_teachers' %}">Teacher / Admin</a></li>
+                <li><a href="#">Parents</a></li>
+                <li><a href="#">Students</a></li>
+                <li><a href="#">Teacher</a></li>
     
               </ul>
             </li>
