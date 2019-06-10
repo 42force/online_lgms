@@ -42,7 +42,7 @@ urlpatterns = [
 
     #path for users app - reason we put comma because it is a list
     path('register/', user_views.register, name='register'),
-    path('testregister/', user_views.testregister, name='testregister'), #testonly
+    # path('testregister/', user_views.testregister, name='testregister'), #testonly
 
 
     #path for registration app for specific user
@@ -53,6 +53,8 @@ urlpatterns = [
 
     #path for profile
     path('profile/', user_views.profile, name='profile'),
+    #path('login_home/', auth_views.LoginView.as_view(template_name='users/login_home.html'), name='login-home'),
+
     # path('teachersprofile/', user_views.teachers_profile, name='teachers_profile'),
     # path('studentsprofile/', user_views.students_profile, name='students_profile'),
     # path('parentsprofile/', user_views.parents_profile, name='parents_profile'),

@@ -77,6 +77,13 @@
         </ul>
         <div class="right-block clearfix">
           <ul class="top-nav hidden-xs">
+              <li>{% if messages%}
+                  {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                      {{ message }}
+                    </div>
+                  {% endfor %}
+                {% endif %}</li>
               <li><a href="{% url 'apply_online' %}">Apply Online</a></li>
               <li><a href="{% url 'registeroptions' %}">Register an Account</a></li>
               <li><a href="{% url 'faq1' %}">FAQs</a></li>
@@ -150,7 +157,7 @@
                 <li class="hidden-xs"><a href="{% url 'terms' %}">Terms of Use</a></li>
                 <li class="hidden-xs"><a href="{% url 'contact' %}">Contact Us</a></li>
               </ul>
-              <li> <a href="{% url 'welcomehome' %}">Online Profile</a></li>
+              <li> <a href="{% url 'profile' %}">Online Profile</a></li>
             </li>
           </ul>
         </div>
@@ -196,15 +203,7 @@
   </div> -->
   <!-- End Banner Carousel -->
   <!-- this is for index html -->
-  {% if messages%}
-    {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}">
-        {{ message }}
-      </div>
-    {% endfor %}
-  {% endif %}
   {% block content %}
-  
   {% endblock %}
   <!-- end of index html -->
   <!-- Start logos Section -->
