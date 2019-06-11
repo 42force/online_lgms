@@ -117,7 +117,7 @@ urlpatterns = [
 
     
     path('courses/test/', views.flatpage, {'url': '/courses/test/'}, name='test'),
-    #path('applyonline/', views.flatpage, {'url': '/applyonline/'}, name='applyonline'),
+    path('applyonline/', views.flatpage, {'url': '/applyonline/'}, name='applyonline'),
     
 
     path('register/', views.flatpage, {'url': '/register/'}, name='register'),
