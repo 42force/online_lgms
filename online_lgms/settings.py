@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     
     'lgmsdiscipline.apps.LgmsdisciplineConfig',
     'rangefilter',
+    'lgmsadmission.apps.LgmsadmissionConfig',
 
 ]
 
