@@ -1,10 +1,23 @@
-from .models import ContactUs
+from django import forms
+
+from .models import ContactUs, Inquiry
 
 
 
 
-class ContactUsForm(forms.ModelForm)
+class ContactUsForm(forms.ModelForm):
 
-class Meta:
-        model = Application
-        fields = ['fname', 'lname', 'mobilenumber', 'streetname', 'country_of_birth', 'progoption', 'howdidyouhear' ]
+    class Meta:
+        model = ContactUs
+        fields = ['firstname', 'lastname', 'inquryname', 'phonenumber', 'email' ]
+
+
+
+class InquiryForm(forms.ModelForm):
+
+    class Meta:
+        model = Inquiry
+        fields = ['firstname', 'phonenumber', 'email', 'programme']
+
+
+

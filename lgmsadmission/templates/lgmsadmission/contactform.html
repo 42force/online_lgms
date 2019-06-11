@@ -24,8 +24,9 @@
 <!-- Start Contact Us -->
 <section class="form-wrapper padding-lg">
   <div class="container">
-    <form name="contact-form" id="ContactForm">
-        this is where i put the form
+    <form name="contact-form" method="POST" id="ContactForm">
+            {% csrf_token %}
+            {{ contact_form.as_p }}
       <div class="row">
         <div class="col-sm-12">
           <button class="btn">Contact Us <span class="icon-more-icon"></span></button>

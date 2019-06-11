@@ -17,5 +17,5 @@ def contact_us(request):
             email.send()
             return redirect('home')
     else:
-        contact_form = ApplicationForm()
-    return render(request, 'lgmsadmission/contactform.html', {'app_form' : app_form})
+        contact_form = ContactUsForm()
+    return render(request, 'lgmsadmission/contactform.html', {'contact_form' : contact_form})

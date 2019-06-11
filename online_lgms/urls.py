@@ -22,6 +22,7 @@ from django.contrib.flatpages import views
 from django.contrib.auth import views as auth_views
 
 from users import views as user_views
+from lgmsadmission import views as lgmsadmission_views
 from users.tempviews import students, teachers, parents
 from ajax_select import urls as ajax_select_urls
 
@@ -57,6 +58,8 @@ urlpatterns = [
 
     #path for profile
     path('profile/', user_views.profile, name='profile'),
+
+    path('contact_us/', lgmsadmission_views.contact_us, name='contact_us'),
     #path('login_home/', auth_views.LoginView.as_view(template_name='users/login_home.html'), name='login-home'),
 
     # path('teachersprofile/', user_views.teachers_profile, name='teachers_profile'),
