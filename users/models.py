@@ -78,17 +78,13 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics' )
     bio = models.TextField(max_length=500, blank=True)
-    streetname = models.CharField(max_length=255, verbose_name="Street Name", blank=True, null=True)
-    cityname = models.CharField(max_length=255, verbose_name="City Name", blank=True, null=True)
-    zip = models.IntegerField('Zip Code', blank=True, null=True)
-    country_of_birth = models.ForeignKey(CountryOption, blank=True, null=True, on_delete=models.CASCADE)
-    mobilenumber = PhoneNumberField('Mobile Number', help_text='MOBILE FORMAT : +639178888888', blank=True)
-    birth_date = models.DateField('Date of Birth', default=date.today, editable=True)
     #role_group = models.OneToOneField(Group, on_delete=models.CASCADE, blank=True,null=True, related_name='user_role_group')
 
 
     def __str__(self):
         return f'{self.user} Profile!'
+
+
 
 
 # @receiver(post_save, sender=User)

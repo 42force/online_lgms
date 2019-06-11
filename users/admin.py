@@ -5,7 +5,7 @@ from .models import Profile, Application
 # Register your models here.
 
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = [ 'user', 'image', 'bio','streetname', 'cityname', 'mobilenumber',]
+    list_display = [ 'user', 'image', 'bio',]
 
 
 class ApplicationAdmin(admin.ModelAdmin):

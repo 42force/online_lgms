@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'jet.dashboard',
     'jet',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,13 +51,15 @@ INSTALLED_APPS = [
     'crispy_forms',
     'users.apps.UsersConfig',
     'lgmssis.apps.LgmssisConfig',
-    # 'lgmsschedule.apps.LgmsscheduleConfig',
+    'lgmsschedule.apps.LgmsscheduleConfig',
     # 'lgmstest.apps.LgmstestConfig',
      'lgmsgrades.apps.LgmsgradesConfig',
     # 'lgmsattendance.apps.LgmsattendanceConfig',
     # 'lgmsadmin.apps.LgmsadminConfig',
+    'ajax_select',
     
-    # 'lgmsdiscipline.apps.LgmsdisciplineConfig'
+    'lgmsdiscipline.apps.LgmsdisciplineConfig',
+    'rangefilter',
 
 ]
 
@@ -201,4 +204,10 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'learninggardenmontessoridrive@gmail.com'
 EMAIL_HOST_PASSWORD = 'Foundation2000'
 
+
+AJAX_LOOKUP_CHANNELS = {
+    # the simplest case, pass a DICT with the model and field to search against :
+    
+    'discstudent' : ('lgmsdiscipline.lookups', 'StudentWithDisciplineLookup'),
+}
 

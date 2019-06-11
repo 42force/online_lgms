@@ -33,7 +33,7 @@ class ProfileUpdateForm(forms.ModelForm):
     birth_date = forms.DateTimeField()
     class Meta:
         model = Profile
-        fields = [ 'image', 'zip', 'bio', 'cityname', 'country_of_birth', 'user']
+        fields = [ 'image',  'bio',  'user']
         
 
 class ApplicationForm(forms.ModelForm):

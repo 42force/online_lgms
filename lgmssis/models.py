@@ -6,9 +6,35 @@ from django.contrib.auth.models import User, Group
 
 from django.contrib.auth.models import AbstractUser
 from datetime import date
+from django.db.models.signals import post_save, m2m_changed
+
 
 
 # Create your models here.
+
+##creating faculty##
+
+def create_faculty(instance):
+    if True:
+        faculty, created = Faculty.objects.get_or_create(username=instance.username)
+        if created:
+            faculty.fname = instance.first_name
+            faculty.lname = instance.last_name
+            faculty.email = instance.email
+            faculty.teacher = True
+            faculty.save()
+
+def create_faculty_profile(sender, instance, created, **kwargs):
+    if instance.groups.filter(name="teacher").count():
+        create_faculty(instance)
+
+def create_faculty_profile_m2m(sender, instance, action, reverse, model, pk_set, **kwargs):
+    if action == 'post_add' and instance.groups.filter(name="teacher").count():
+        create_faculty(instance)
+
+post_save.connect(create_faculty_profile, sender=User)
+m2m_changed.connect(create_faculty_profile_m2m, sender=User.groups.through)
+##creating faculty##
 
 
 class CountryOption(models.Model):
@@ -64,7 +90,7 @@ class Enquire(models.Model):
 
 
 class Faculty(models.Model):
-        faculty_users = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
+        fuser = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
         altemail = models.EmailField(blank=True)
         number = models.IntegerField(blank=True)
         ext = models.CharField(max_length=10, blank=True, null=True)
@@ -100,7 +126,7 @@ class GradeLevel(models.Model):
     class Meta:
         ordering = ('id',)
 
-    def __unicode__(self):
+    def __str__(self):
         return f'{self.name} GradeLevel'
 
     @property
@@ -108,10 +134,79 @@ class GradeLevel(models.Model):
         return self.id
 
 
+class FamilyAccessUser(User):
+    """ A person who can log into the non-admin side and see the same view as a student,
+    except that he/she cannot submit timecards.
+    This proxy model allows non-superuser registrars to update family user accounts.
+    """
+    class Meta:
+        proxy = True
+    def save(self, *args, **kwargs):
+        super(FamilyAccessUser, self).save(*args, **kwargs)
+        self.groups.add(Group.objects.get_or_create(name='family')[0])
+
+
+class IntegerRangeField(models.IntegerField):
+    def __init__(self, verbose_name=None, name=None, min_value=None, max_value=None, **kwargs):
+        self.min_value, self.max_value = min_value, max_value
+        models.IntegerField.__init__(self, verbose_name, name, **kwargs)
+    def formfield(self, **kwargs):
+        defaults = {'min_value': self.min_value, 'max_value':self.max_value}
+        defaults.update(kwargs)
+        return super(IntegerRangeField, self).formfield(**defaults)
+
+class ClassYear(models.Model):
+    """ Class year such as class of 2010.
+    """
+    year = IntegerRangeField(unique=True, min_value=1900, max_value=2200, help_text="Example 2014")
+    full_name = models.CharField(max_length=255, help_text="Example Class of 2014", blank=True)
+    def __str__(self):
+        return str(self.full_name)
+
+    def save(self, *args, **kwargs):
+        if not self.full_name:
+            self.full_name = "Class of %s" % (self.year,)
+        super(ClassYear, self).save(*args, **kwargs)
+
+
+
+class ReasonLeft(models.Model):
+    reason = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return str(self.reason)
+
+
 class Student(models.Model):
-        user_students = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
+        user_students = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
         year = models.ForeignKey(GradeLevel, blank=True, null=True, on_delete=models.CASCADE)
         lrn_no = models.CharField('Learners Number', default="", max_length=64, blank=True)
+        grad_date = models.DateField(blank=True, null=True)
+        sex = models.CharField(max_length=1, choices=(('M', 'Male'), ('F', 'Female')), blank=True, null=True)
+        bday = models.DateField(blank=True, null=True, verbose_name="Birth Date")
+        year = models.ForeignKey(GradeLevel, blank=True, null=True, on_delete=models.SET_NULL)
+        class_of_year = models.ForeignKey(ClassYear, blank=True, null=True, on_delete=models.CASCADE)
+        date_dismissed = models.DateField(blank=True, null=True)
+        reason_left = models.ForeignKey(ReasonLeft, blank=True, null=True, on_delete=models.CASCADE)
+        unique_id = models.IntegerField(blank=True, null=True, unique=True, help_text="For integration with outside databases")
+        parent_guardian = models.CharField(max_length=150, blank=True, editable=False)
+        streetname = models.CharField(max_length=255, verbose_name="Street Name", blank=True, null=True)
+        zip = models.CharField(max_length=10, blank=True, editable=False)
+        parent_email = models.EmailField(blank=True, editable=False)
+        siblings = models.ManyToManyField('Student', blank=True)
+
+        class Meta:
+            permissions = (
+                # ("view_student", "View student"),
+                ("view_ssn_student", "View student lrn_no"),
+                ("view_mentor_student", "View mentoring information student"),
+                ("reports", "View reports"),
+        )
+
+        def __str__(self):
+            return self.lname + ", " + self.fname
+
+
 
 
 
@@ -142,7 +237,7 @@ class SchoolYear(models.Model):
     class Meta:
         ordering = ('-start_date',)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def get_number_days(self, date=date.today()):
@@ -167,8 +262,8 @@ class Cohort(models.Model):
     students = models.ManyToManyField('Student', blank=True, db_table="sis_studentcohort_students")
     primary = models.BooleanField(blank=True, help_text="If set true - all students in this cohort will have it set as primary!")
 
-    def __unicode__(self):
-        return unicode(self.name)
+    def __str__(self):
+        return (self.name)
 
 #for subjects
 class Subjects(models.Model):

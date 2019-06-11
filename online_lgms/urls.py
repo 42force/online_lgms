@@ -23,10 +23,14 @@ from django.contrib.auth import views as auth_views
 
 from users import views as user_views
 from users.tempviews import students, teachers, parents
+from ajax_select import urls as ajax_select_urls
 
 
 
 urlpatterns = [
+
+    # place it at whatever base url you like
+    path('ajax_select/', include(ajax_select_urls)),
 
     path('jet/', include('jet.urls', 'jet')),
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
