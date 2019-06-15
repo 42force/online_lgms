@@ -1,4 +1,6 @@
 {% extends "base_registration.html"%}
+{% load crispy_forms_tags %}
+
 
 {% block content %}
 <section class="login-wrapper register">
@@ -12,7 +14,7 @@
                     <form method="POST" class="form-outer">
                         {% csrf_token %}
                     
-                        {{ app_form.as_p }}
+                        {{ app_form | crispy }}
                         <div class="button-outer">
                             <button class="btn">Submit <span class="icon-more-icon"></span></button>
                         </div>

@@ -94,12 +94,13 @@
               <li> <span>Email</span> <a href="mailto:lrng_garden_montessori@yahoo.com">info@lgms.ph</a> </li>
               <li> <span>Toll Free</span> +632 820 4064 </li>
               <li> <span>Toll Free</span> +632 703 0662 </li>
+              {% if user.is_authenticated %}
+              <a href="{% url 'logout' %}" class="login">Logout <span class="icon-more-icon"></span></a>
+              {% else %}
+              <a href="{% url 'login' %}" class="login">Login <span class="icon-more-icon"></span></a>
+              {% endif %}
             </ul>
-            {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}" class="login">Logout <span class="icon-more-icon"></span></a>
-            {% else %}
-            <a href="{% url 'login' %}" class="login">Login <span class="icon-more-icon"></span></a>
-            {% endif %}
+  
           </div>
         </div>
       </div>

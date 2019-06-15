@@ -212,3 +212,9 @@ AJAX_LOOKUP_CHANNELS = {
     'discstudent' : ('lgmsdiscipline.lookups', 'StudentWithDisciplineLookup'),
 }
 
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Ldj-6gUAAAAAN2RJCuVaanwM7Z_J2x_IWHWtRNW'

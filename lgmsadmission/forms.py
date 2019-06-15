@@ -5,11 +5,14 @@ from .models import ContactUs, Inquiry
 
 
 
+
+
+
 class ContactUsForm(forms.ModelForm):
 
     class Meta:
         model = ContactUs
-        fields = ['firstname', 'lastname', 'inquryname', 'phonenumber', 'email' ]
+        fields = ['firstname', 'lastname', 'inquryname', 'phonenumber', 'email', 'id' ]
 
 
 
@@ -17,7 +20,7 @@ class InquiryForm(forms.ModelForm):
 
     class Meta:
         model = Inquiry
-        fields = ['firstname', 'phonenumber', 'email', 'programme']
+        fields = ['firstname', 'phonenumber', 'email', 'programme', 'id']
 
 
 

@@ -43,26 +43,14 @@
                         </ul>
                     </div>
                     <div class="col-md-5 col-md-pull-7">
-                        <form method="POST" class="post-form">
-                            {% csrf_token %}
+                       
                         <div class="enquire-wrapper">
                             <figure class="hidden-xs hidden-sm"><img src="images/course-img.jpg" class="img-responsive" alt=""></figure>
                             <div class="enquire-now">
                                 <div class="inner">
-                                    <h3>Inquire now</h3>
-                                    <form>
-                                    <div class="row1">
-                                        <input id="id_fullname"name="fullname" type="text" placeholder="Name">
-                                    
-                                    </div>
-                                    <div class="row2 clearfix">
-                                        <input id="id_email" name="email" type="text" placeholder="Email">
-                                        <input id="id_mobilenumber" name="mobile" type="text" placeholder="Phone">
-                                    </div>
-                                    <div class="row2 clearfix">
-                                        <input id="id_place" name="place" type="text" placeholder="Place">
-                                        <input id="id_programme" name="programme" type="text" placeholder="Course or Programme">
-                                    </div>
+                                        <form method="POST" class="post-form">
+                                                {% csrf_token %}
+                                                {{ inquiry_form | crispy }}
                                 </div>
                                 <button class="enquire-btn" type="submit">Inquire now <span class="icon-more-icon"></span></button>
                             </div>

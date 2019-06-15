@@ -60,11 +60,14 @@ urlpatterns = [
     path('profile/', user_views.profile, name='profile'),
 
     path('contact_us/', lgmsadmission_views.contact_us, name='contact_us'),
-    #path('login_home/', auth_views.LoginView.as_view(template_name='users/login_home.html'), name='login-home'),
 
-    # path('teachersprofile/', user_views.teachers_profile, name='teachers_profile'),
-    # path('studentsprofile/', user_views.students_profile, name='students_profile'),
-    # path('parentsprofile/', user_views.parents_profile, name='parents_profile'),
+    #for casa
+    path('casa_inquiry/', lgmsadmission_views.casa_inquiry, name='casa_inquiry'),
+    path('casa_inquiry/', lgmsadmission_views.casa_inquiry, name='casa_inquiry'),
+
+    path('thankyou_inquiry/', lgmsadmission_views.thankyou_inquiry, name='thankyou_inquiry'),
+
+    path('inquiry_us/', lgmsadmission_views.inquiry_us, name='inquiry_us'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 
@@ -139,3 +142,12 @@ urlpatterns = [
     ], 'tempviews'), namespace='teachers')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+
+ #path('login_home/', auth_views.LoginView.as_view(template_name='users/login_home.html'), name='login-home'),
+
+    # path('teachersprofile/', user_views.teachers_profile, name='teachers_profile'),
+    # path('studentsprofile/', user_views.students_profile, name='students_profile'),
+    # path('parentsprofile/', user_views.parents_profile, name='parents_profile'),
+   

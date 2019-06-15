@@ -1,4 +1,5 @@
 {% extends "base_new.html" %}
+{% load crispy_forms_tags %}
 
 
 {% block content %}
@@ -12,7 +13,7 @@
           <p>Please feel free to contact us anytime.</p>
         </div>
       </div>
-      <div class="col-sm-4 col-lg-3"> <a href="{% url 'contact' %}" class="apply-online clearfix">
+      <div class="col-sm-4 col-lg-3"> <a href="{% url 'contact_us' %}" class="apply-online clearfix">
           <div class="left clearfix"> <span class="icon"><img src="images/apply-online-sm-ico.png" class="img-responsive" alt=""></span> <span class="txt">Apply Online</span> </div>
           <div class="arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
         </a></div>
@@ -26,7 +27,7 @@
   <div class="container">
     <form name="contact-form" method="POST" id="ContactForm">
             {% csrf_token %}
-            {{ contact_form.as_p }}
+            {{ contact_form | crispy }}
       <div class="row">
         <div class="col-sm-12">
           <button class="btn">Contact Us <span class="icon-more-icon"></span></button>
