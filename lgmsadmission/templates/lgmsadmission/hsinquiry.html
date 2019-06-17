@@ -13,7 +13,7 @@
                             <p>Apply Now.</p>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-lg-3"> <a href="{% url 'applyonline' %}" class="apply-online clearfix">
+                    <div class="col-sm-4 col-lg-3"> <a href="{% url 'apply_online' %}" class="apply-online clearfix">
                         <div class="left clearfix"> <span class="icon"><img src="{% static "lgmssis/images/apply-online-sm-ico.png" %}" class="img-responsive" alt=""></span> <span class="txt">Apply Online</span> </div>
                         <div class="arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
                         </a> <a href="https://drive.google.com/file/d/1nCMhibKUUoGlcEu5Z_G3lt_VAeuTLsx0/view?usp=sharing" class="download-prospects brochure"> <span class="icon-brochure-icon"></span> <span class="small">Download:</span>Course Brochure</a> </div>
@@ -98,7 +98,7 @@
                         <p></p>
                     </li>
                 </ul>
-                <div class="button-wrapper"> <a href="apply-online.html" class="btn">apply now <span class="icon-more-icon"></span></a> </div>
+                <div class="button-wrapper"> <a href="{% url 'apply_online' %}" class="btn">apply now <span class="icon-more-icon"></span></a> </div>
             </div>
         </section>
         <!-- End How to Apply -->
