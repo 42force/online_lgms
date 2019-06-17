@@ -54,7 +54,7 @@ def casa_inquiry(request):
             mail_subject = 'Thank you for your Inquiry'
             message = 'Inquiry Received, we will be in touch shortly'
             to_email = casainquiry_form.cleaned_data.get('email')
-            email = EmailMessage(mail_subject, message, to=['to_email', 'lrng_garden_montessori@yahoo.com.ph'])
+            email = EmailMessage(mail_subject, message, to=[to_email])
             email.send()
             return redirect('thankyou_inquiry')
     else:
