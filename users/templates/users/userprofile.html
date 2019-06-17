@@ -64,11 +64,11 @@
             
                                     <div class="col-xs-12 col-sm-9">
                                         <h4 class="blue">
-                                            <span class="middle">John Doe</span>
+                                            <span class="middle">{{ user.first_name }}</span>
             
                                             <span class="label label-purple arrowed-in-right">
                                                 <i class="ace-icon fa fa-circle smaller-80 align-middle"></i>
-                                                online
+                                                {{ user.last_name }}
                                             </span>
                                         </h4>
             
@@ -181,7 +181,7 @@
                                         <div class="profile-activity clearfix">
                                             <div>
                                                 <img class="pull-left" alt="Alex Doe's avatar" src="http://bootdey.com/img/Content/avatar/avatar1.png">
-                                                <a class="user" href="#"> Alex Doe </a>
+                                                <a class="user" href="#"> {{ user.first_name}} </a>
                                                 changed his profile photo.
                                                 <a href="#">Take a look</a>
             
