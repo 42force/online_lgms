@@ -24,3 +24,39 @@ class InquiryForm(forms.ModelForm):
 
 
 
+class CasaInquiryForm(forms.ModelForm):
+
+    class Meta:
+        model = Inquiry
+        fields = ['firstname', 'phonenumber', 'email', 'programme', 'id']
+
+
+class GradeSchoolInquiryForm(forms.ModelForm):
+
+    class Meta:
+        model = Inquiry
+        fields = ['firstname', 'phonenumber', 'email', 'programme', 'id']
+
+
+class HighSchoolInquiryForm(forms.ModelForm):
+
+    class Meta:
+        model = Inquiry
+        fields = ['firstname', 'phonenumber', 'email', 'programme', 'id']
+
+
+
+class HomeStudyInquiryForm(forms.ModelForm):
+
+    class Meta:
+        model = Inquiry
+        fields = ['firstname', 'phonenumber', 'email', 'programme', 'id']
+
+
+class SpedInquiryForm(forms.ModelForm):
+
+    class Meta:
+        model = Inquiry
+        fields = ['firstname', 'phonenumber', 'email', 'programme', 'id']
+
+

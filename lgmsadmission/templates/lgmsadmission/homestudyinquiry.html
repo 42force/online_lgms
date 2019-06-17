@@ -1,0 +1,105 @@
+{% extends "base_new.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+        <!-- Start Banner -->
+        <div class="inner-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-lg-9">
+                        <div class="content">
+                            <h1>HOME STUDY PROGRAM</h1>
+                            <p>Apply Now.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg-3"> <a href="{% url 'apply_online' %}" class="apply-online clearfix">
+                        <div class="left clearfix"> <span class="icon"><img src="{% static "lgmssis/images/apply-online-sm-ico.png" %}" class="img-responsive" alt=""></span> <span class="txt">Apply Online</span> </div>
+                        <div class="arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                        </a> <a href="https://drive.google.com/open?id=1_JSOuEBc3KAq_XAiF0lTOOQfQAvZGt6F" class="download-prospects brochure"> <span class="icon-brochure-icon"></span> <span class="small">Download:</span>Course Brochure</a> </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Banner -->
+
+        <!-- Start Course Description -->
+        <section class="about inner padding-lg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-md-push-5 left-block">
+                        <h2>COURSE DESCRIPTION</h2>
+                        <p>When Dr. Maria Montessori set up her first class for children ages 3 to 7, (which she called a Casa dei Bambini – a children’s home), she observed that some activities appealed to the children more than others. The activities that engaged the children fully (or put them in a state of ‘flow,’ to use the modern term coined by psychologist Mihály Csikszentmihályi) became the basis of the international Montessori Casa curriculum for 3 to 6 year olds that is found around the globe today.
+
+In considering the types of materials that fully engaged the young child, Dr. Montessori realized that in addition to the human tendencies we all have for communication, exploration and order, children have periods of development when some tendencies or sensitivities are much more pronounced than others. For the young child, these sensitivities include what Montessori termed an absorbent mind; the ability of young children to absorb the culture and language in which they exist. For example, young children naturally mimic what the adults around them do and say. Young children are also very interested in exploring their world through their senses; this helps explain why they have such a strong desire to move and explore. These children also have a strong sense of order and a tendency to repeat things independently.
+
+                        <p>By respecting and responding to children’s natural tendencies Dr. Montessori was able to create a learning environment for young children that has stood the test of time. The ‘Casa’ classroom is a prepared environment that stimulates the development of motor skills, the senses, cognition, language, eye-hand co-ordination, and independence. A Montessori prepared environment encourages the full development of children physically, emotionally, socially and academically. </p>
+                        <div class="cert-head">
+                            <h3>CERTIFICATION</h3>
+                        </div>
+                        <p>LGMS will provide Certification. </p>
+                        <ul class="cert-list clearfix">
+                            <li>Certificate for Sensory</li>
+                            <li>Practical Application </li>
+                            <li>Mathematics </li>
+                            <li>Sensory Achievement</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 col-md-pull-7">      
+                        <div class="enquire-wrapper">
+                            <figure class="hidden-xs hidden-sm"><img src="images/course-img.jpg" class="img-responsive" alt=""></figure>
+                            <div class="enquire-now">
+                                <div class="inner">
+                                        <form method="POST" class="post-form">
+                                                {% csrf_token %}
+                                                {{ homestudyinquiry_form | crispy }}
+                                </div>
+                                <button class="enquire-btn" type="submit">Inquire now <span class="icon-more-icon"></span></button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+ 
+            </div>
+        </section>
+        <!-- End Course Description -->
+
+   <!-- Start Course Details Tab -->
+
+    <!-- End Course Details Tab -->
+
+        <!-- Start How to Apply -->
+        <section class="how-apply padding-lg">
+            <div class="container">
+                <h2><span>There are many ways to learn</span>How to Apply</h2>
+                <ul class="row">
+                    <li class="col-sm-4">
+                        <div class="icon-block"> <span class="num">1</span> <img src="{% static "lgmssis/images/registration-ico.png"%}" alt=""></div>
+                        <h3>REGISTRATION</h3>
+                        <p>Fill up the application form and attach requirements</p>
+                        <p>Arrange for an interview. </p>
+                        <p>Have the child undergo assessment.</p>
+                        <p>Settle Tuition Fee</p>
+                    </li>
+                    <li class="col-sm-4">
+                      {% load static %}
+                        <div class="icon-block"> <span class="num">2</span> <img src="{% static "lgmssis/images/registration-ico.png"%}" alt=""></div>
+                        <h3>DOCUMENTATION</h3>
+                        <p>Latest Birth Certificate</p>
+                        <p>Latest Baptismal Certificate</p>
+                        <p>Latest Report Card or Equivalent</p>
+                    </li>
+                    <li class="col-sm-4 active">
+                        <div class="icon-block"> <span class="num">3</span> <img src="{% static "lgmssis/images/get-start-ico.png"%}" alt=""></div>
+                        <h3>Get started now</h3>
+                        <p></p>
+                    </li>
+                </ul>
+                <div class="button-wrapper"> <a href="{% url 'apply_online'%}" class="btn">apply now <span class="icon-more-icon"></span></a> </div>
+            </div>
+        </section>
+        <!-- End How to Apply -->
+
+        <!-- Start Comments -->
+
+        <!-- End Comments -->
+{% endblock %}

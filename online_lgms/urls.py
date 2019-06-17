@@ -64,6 +64,10 @@ urlpatterns = [
     #for casa
     path('casa_inquiry/', lgmsadmission_views.casa_inquiry, name='casa_inquiry'),
     path('casa_inquiry/', lgmsadmission_views.casa_inquiry, name='casa_inquiry'),
+    path('gradeschool_inquiry/', lgmsadmission_views.gradeschool_inquiry, name='gradeschool_inquiry'),
+    path('hs_inquiry/', lgmsadmission_views.hs_inquiry, name='hs_inquiry'),
+    path('homestudy_inquiry/', lgmsadmission_views.homestudy_inquiry, name='homestudy_inquiry'),
+    path('sped_inquiry/', lgmsadmission_views.sped_inquiry, name='sped_inquiry'),
 
     path('thankyou_inquiry/', lgmsadmission_views.thankyou_inquiry, name='thankyou_inquiry'),
 
