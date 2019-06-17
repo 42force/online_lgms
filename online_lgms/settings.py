@@ -174,7 +174,8 @@ USE_TZ = True
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #STATIC_ROOT = '/home/lgms/lgms/online_lgms/staticfiles'
 #STATIC_ROOT = '/Users/wackygalang/Projects/clones/online_lgms/staticfiles'
-STATIC_ROOT = 'wackyproject/project/clones/online_lgms/staticfiles'
+#
+# STATIC_ROOT = 'wackyproject/project/clones/online_lgms/staticfiles'
 STATIC_URL = '/static/'
 
 
