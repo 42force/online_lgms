@@ -55,6 +55,10 @@
                                         <form method="POST" class="post-form">
                                                 {% csrf_token %}
                                                 {{ spedinquiry_form | crispy }}
+
+
+                                                <div class="g-recaptcha" data-sitekey="6Ldj-6gUAAAAAMKqDl-5KBTIPbTJt18zobfuZvmO"></div>
+                                                <br/>
                                 </div>
                                 <button class="enquire-btn" type="submit">Inquire now <span class="icon-more-icon"></span></button>
                             </div>

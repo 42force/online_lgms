@@ -28,6 +28,8 @@
     <form name="contact-form" method="POST" id="ContactForm">
             {% csrf_token %}
             {{ contact_form | crispy }}
+            <div class="g-recaptcha" data-sitekey="6Ldj-6gUAAAAAMKqDl-5KBTIPbTJt18zobfuZvmO"></div>
+                        <br/>
       <div class="row">
         <div class="col-sm-12">
           <button class="btn">Contact Us <span class="icon-more-icon"></span></button>
