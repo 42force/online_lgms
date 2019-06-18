@@ -11,6 +11,7 @@ from django.conf import settings
 
 from .models import Faculty, CountryOption, Applicant, Enquire, StudentHealthRecord, Student, Cohort
 
+from lgmsschedule.models import CourseEnrollment
 #from lgmsschedule.models import CourseEnrollment
 
 admin.site.site_header = 'Learning Garden Montessori Administration'
@@ -192,6 +193,17 @@ if 'ecwsp.benchmark_grade' in settings.INSTALLED_APPS:
 #this is from the sis - original admin page
 ######will try to import#########
 
+
+class StudentCourseInline(admin.TabularInline):
+    model = CourseEnrollment
+    #form = make_ajax_form(CourseEnrollment, {'course':'course','exclude_days':'day'})
+    raw_id_fields = ('course',)
+    # define the autocomplete_lookup_fields
+    autocomplete_lookup_fields = {
+        'fk': ['course'],
+    }
+    fields = ['course', 'attendance_note', 'exclude_days']
+    extra = 0
 
 
 admin.site.unregister(FlatPage)
