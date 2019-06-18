@@ -119,6 +119,25 @@ class Location(models.Model):
 
 
 
+class Day(models.Model):
+    dayOfWeek = (
+        ("1", 'Monday'),
+        ("2", 'Tuesday'),
+        ("3", 'Wednesday'),
+        ("4", 'Thursday'),
+        ("5", 'Friday'),
+        ("6", 'Saturday'),
+        ("7", 'Sunday'),
+    )
+    day = models.CharField(max_length=1, choices=dayOfWeek)
+    def __unicode__(self):
+        return self.get_day_display()
+    class Meta:
+        ordering = ('day',)
+
+
+        #skip department grade##
+
 class CourseEnrollment(models.Model):
     course = models.ForeignKey('Course', on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -145,24 +164,6 @@ class CourseEnrollment(models.Model):
             student = self.user.student
         super(CourseEnrollment, self).delete(*args, **kwargs)
 
-class Day(models.Model):
-    dayOfWeek = (
-        ("1", 'Monday'),
-        ("2", 'Tuesday'),
-        ("3", 'Wednesday'),
-        ("4", 'Thursday'),
-        ("5", 'Friday'),
-        ("6", 'Saturday'),
-        ("7", 'Sunday'),
-    )
-    day = models.CharField(max_length=1, choices=dayOfWeek)
-    def __unicode__(self):
-        return self.get_day_display()
-    class Meta:
-        ordering = ('day',)
-
-
-        #skip department grade##
 
 #course is similar to subject but more of casa course, junior high, senior high, special education
 class Course(models.Model):
@@ -197,6 +198,7 @@ class Course(models.Model):
        link = '<a href="/lgmsgrades/teacher_grade/upload/%s" class="historylink"> Grades </a>' % (self.id,)
        return link
     grades_link.allow_tags = True
+
 
 
 

@@ -155,6 +155,27 @@ class IntegerRangeField(models.IntegerField):
         defaults.update(kwargs)
         return super(IntegerRangeField, self).formfield(**defaults)
 
+class Cohort(models.Model):
+    name = models.CharField(max_length=255)
+    students = models.ManyToManyField('Student', blank=True, db_table="sis_studentcohort_students")
+    primary = models.BooleanField(blank=True, help_text="If set true - all students in this cohort will have it set as primary!")
+
+    def __unicode__(self):
+        return unicode(self.name)
+
+def after_cohort_m2m(sender, instance, action, reverse, model, pk_set, **kwargs):
+    if instance.primary:
+        for student in instance.students.all():
+            # Should be a get, but somehow there are sometimes more than one! Not so good.
+            student_cohort = student.studentcohort_set.filter(cohort__id=instance.id)[0]
+            student_cohort.primary = True
+            student_cohort.save()
+
+m2m_changed.connect(after_cohort_m2m, sender=Cohort.students.through)
+
+class PerCourseCohort(Cohort):
+    course = models.ForeignKey('lgmsschedule.Course', on_delete=models.CASCADE)
+
 class ClassYear(models.Model):
     """ Class year such as class of 2010.
     """
@@ -194,6 +215,11 @@ class Student(models.Model):
         zip = models.CharField(max_length=10, blank=True, editable=False)
         parent_email = models.EmailField(blank=True, editable=False)
         siblings = models.ManyToManyField('Student', blank=True)
+        cohorts = models.ManyToManyField(Cohort, through='StudentCohort', blank=True)
+        cache_cohort = models.ForeignKey(Cohort, editable=False, blank=True, null=True, on_delete=models.SET_NULL, help_text="Cached primary cohort.", related_name="cache_cohorts")
+        individual_education_program = models.BooleanField()
+        cache_gpa = models.DecimalField(editable=False, max_digits=5, decimal_places=2, blank=True, null=True)
+
 
         class Meta:
             permissions = (
@@ -205,6 +231,17 @@ class Student(models.Model):
 
         def __str__(self):
             return self.lname + ", " + self.fname
+
+
+        @property
+        def homeroom(self):
+            """ Returns homeroom for student """
+            from lgmsschedule.models import Course
+            try:
+                courses = self.course_set.filter(homeroom=True)
+                homeroom = self.course_set.get( homeroom=True)
+            except:
+                return ""
 
 
 
@@ -257,13 +294,6 @@ class SchoolYear(models.Model):
 
 
 
-class Cohort(models.Model):
-    name = models.CharField(max_length=255)
-    students = models.ManyToManyField('Student', blank=True, db_table="sis_studentcohort_students")
-    primary = models.BooleanField(blank=True, help_text="If set true - all students in this cohort will have it set as primary!")
-
-    def __str__(self):
-        return (self.name)
 
 #for subjects
 class Subjects(models.Model):
@@ -284,7 +314,25 @@ class Subjects(models.Model):
 
 
 
+class StudentCohort(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    cohort = models.ForeignKey(Cohort, on_delete=models.CASCADE)
+    primary = models.BooleanField()
+
+    def save(self, *args, **kwargs):
+        if self.primary:
+            for cohort in StudentCohort.objects.filter(student=self.student).exclude(id=self.id):
+                cohort.primary = False
+                cohort.save()
+
+        super(StudentCohort, self).save(*args, **kwargs)
+
+        if self.primary:
+            self.student.cache_cohort = self.cohort
+            self.student.save()
+
     
+#####
 
 
 

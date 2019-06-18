@@ -1,8 +1,9 @@
 from django.contrib import admin
 
-
+from ajax_select import make_ajax_form
 from .models import Course, CourseEnrollment, CourseMeet, DaysOff, Day, MarkingPeriod
 # Register your models here.
+
 
 def copy(modeladmin, request, queryset):
     for object in queryset:
@@ -26,7 +27,7 @@ class CourseAdmin(admin.ModelAdmin):
             pass
         return super(CourseAdmin, self).render_change_form(request, context, args, kwargs)
     
-    list_display = ['__unicode__', 'teacher', 'grades_link']
+    list_display = ['__str__', 'teacher', 'grades_link']
     search_fields = ['fullname', 'shortname', 'description', 'teacher__username']
     list_filter = ['teacher', 'level', 'marking_period', 'marking_period__school_year', 'active', 'graded', 'homeroom']
     inlines = [CourseMeetInline]
@@ -46,12 +47,14 @@ class DaysOffInline(admin.TabularInline):
 admin.site.register(Day)
     
 class CourseEnrollmentAdmin(admin.ModelAdmin):
-    search_fields = ['course__fullname', 'user__username', 'user__fname', 'role']
+    search_fields = ['course__fullname', 'user__username', 'user__first_name', 'role']
     list_display = ['course', 'user', 'role', 'attendance_note']
 admin.site.register(CourseEnrollment, CourseEnrollmentAdmin)
 
 class MarkingPeriodAdmin(admin.ModelAdmin):
     inlines = [DaysOffInline]
 admin.site.register(MarkingPeriod, MarkingPeriodAdmin)
+
+
 
 admin.site.register(Course, CourseAdmin)
