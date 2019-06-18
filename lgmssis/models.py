@@ -217,7 +217,7 @@ class Student(models.Model):
         siblings = models.ManyToManyField('Student', blank=True)
         cohorts = models.ManyToManyField(Cohort, through='StudentCohort', blank=True)
         cache_cohort = models.ForeignKey(Cohort, editable=False, blank=True, null=True, on_delete=models.SET_NULL, help_text="Cached primary cohort.", related_name="cache_cohorts")
-        individual_education_program = models.BooleanField()
+        #individual_education_program = models.BooleanField(help_text="Individual Program")
         cache_gpa = models.DecimalField(editable=False, max_digits=5, decimal_places=2, blank=True, null=True)
 
 
@@ -242,6 +242,28 @@ class Student(models.Model):
                 homeroom = self.course_set.get( homeroom=True)
             except:
                 return ""
+
+
+        def get_disciplines(self, mps, action_name=None, count=True):
+            """ Shortcut to look up discipline records
+            mp: Marking Period
+            action_name: Discipline action name
+            count: Boolean - Just the count of them """
+            if hasattr(mps,'db'): # More than one?
+                if len(mps):
+                    start_date = mps.order_by('start_date')[0].start_date
+                    end_date = mps.order_by('-end_date')[0].end_date
+                    disc = self.studentdiscipline_set.filter(date__range=(start_date,end_date))
+                else:
+                    disc = self.studentdiscipline_set.none()
+            else:
+                disc = self.studentdiscipline_set.filter(date__range=(mps.start_date,mps.end_date))
+            if action_name:
+                disc = disc.filter(action__name=action_name)
+            if count:
+                return disc.count()
+            else:
+                return disc
 
 
 

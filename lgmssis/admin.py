@@ -89,6 +89,13 @@ class StudentCourse(Student):
     class Meta:
         proxy = True
 
+
+
+
+
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ['lrn_no', 'user_students']
+
 # class CourseEnrollmentInline(admin.TabularInline):
 #     model = CourseEnrollment
 #     form = make_ajax_form(CourseEnrollment, {'course':'course','exclude_days':'day'})
@@ -102,13 +109,13 @@ class StudentCourse(Student):
 
 
 
-# class StudentCourseAdmin(admin.ModelAdmin):
-#     inlines = [CourseEnrollmentInline]
-#     search_fields = ['user_students', 'username', 'lrn_no', 'streetname', 'zip']
-#     fields = ['lrn_no', 'unique_id']
-#     #list_filter = ['inactive','year']
-#     readonly_fields = fields
-# admin.site.register(StudentCourse, StudentCourseAdmin)
+class StudentCourseAdmin(admin.ModelAdmin):
+    #inlines = [StudentCourseInline]
+    search_fields = ['user_students', 'lrn_no', 'streetname', 'zip', 'unique_id']
+    fields = ['lrn_no', 'zip']
+    #list_filter = ['inactive','year']
+    #readonly_fields = fields
+admin.site.register(StudentCourse, StudentCourseAdmin)
 
 
 
@@ -143,6 +150,7 @@ class CohortAdmin(admin.ModelAdmin):
             student.save()
 
 admin.site.register(Cohort, CohortAdmin)
+admin.site.register(Student, StudentAdmin)
 
 
 
