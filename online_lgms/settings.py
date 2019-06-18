@@ -61,6 +61,8 @@ INSTALLED_APPS = [
     'lgmsdiscipline.apps.LgmsdisciplineConfig',
     'rangefilter',
     'lgmsadmission.apps.LgmsadmissionConfig',
+    'lgmscounsel',
+    'ckeditor',
 
 ]
 
@@ -175,7 +177,7 @@ USE_TZ = True
 #STATIC_ROOT = '/home/lgms/lgms/online_lgms/staticfiles'
 #STATIC_ROOT = '/Users/wackygalang/Projects/clones/online_lgms/staticfiles'
 #
-# STATIC_ROOT = 'wackyproject/project/clones/online_lgms/staticfiles'
+STATIC_ROOT = 'wackyproject/project/clones/online_lgms/staticfiles'
 STATIC_URL = '/static/'
 
 
@@ -209,7 +211,8 @@ EMAIL_HOST_PASSWORD = 'Foundation2000'
 
 AJAX_LOOKUP_CHANNELS = {
     # the simplest case, pass a DICT with the model and field to search against :
-    
+
+    'student' : ('lgmssis.lookups', 'StudentLookup'),
     'discstudent' : ('lgmsdiscipline.lookups', 'StudentWithDisciplineLookup'),
 }
 
@@ -219,3 +222,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 GOOGLE_RECAPTCHA_SECRET_KEY = '6Ldj-6gUAAAAAN2RJCuVaanwM7Z_J2x_IWHWtRNW'
+
+
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+
+CKEDITOR_UPLOAD_PATH = "uploads/"

@@ -9,7 +9,7 @@ from django.conf import settings
 #from reversion.admin import VersionAdmin
 #from lgmssis.helper_functions import ReadPermissionModelAdmin, CustomFieldAdmin
 
-from .models import Faculty, CountryOption, Applicant, Enquire, StudentHealthRecord, Student, Cohort
+from .models import GradeLevel, Faculty, CountryOption, Applicant, Enquire, StudentHealthRecord, Student, Cohort
 
 from lgmsschedule.models import CourseEnrollment
 #from lgmsschedule.models import CourseEnrollment
@@ -210,5 +210,6 @@ admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, FlatPageAdmin)
 admin.site.register(CountryOption, CountryOptionAdmin)
 admin.site.register(Faculty, FacultyAdmin)
+admin.site.register(GradeLevel)
 # admin.site.register(Applicant, ApplicantAdmin)
 # admin.site.register(Enquire, EnquireAdmin)
