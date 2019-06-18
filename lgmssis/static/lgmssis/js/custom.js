@@ -354,10 +354,6 @@
             if ($element.length > 0) {
                 $element.datepicker()
             }
-            /****************************
-             *   Datepicker for Django  *
-             ****************************/
-            
 
             /****************************
              *   Validate Contact Form  *
