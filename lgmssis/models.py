@@ -266,6 +266,83 @@ class Student(models.Model):
                 return disc
 
 
+    # two underscores make it too private!
+        def _calculate_grade_for_single_course(self, course, marking_period, date_report):
+            #print '_c_g_f_s_c(',course, marking_period, date_report, ')'
+            """ Separate from __calculate_grade_for_courses() to avoid code duplication in
+            ecwsp.benchmark_grade.utility """
+            if marking_period:
+                grade = float(self.grade_set.get(course=course, override_final=False, marking_period=marking_period).get_grade())
+                credit = float(course.credits) / float(course.marking_period.count())
+            else:
+                grade = float(course.get_final_grade(self, date_report=date_report))
+                #grade = float(grade)
+                credit = float(course.get_credits_earned(date_report=date_report))
+            return grade, credit
+
+        #benchmark grade importance 
+        def __calculate_grade_for_courses(self, courses, marking_period=None, date_report=None):
+            #print '__c_g_f_c(', courses, marking_period, date_report, ')'
+            if "lgmsbenchmarkgrade" in settings.INSTALLED_APPS:
+                from ecwsp.benchmark_grade.utility import benchmark_calculate_grade_for_courses
+                return benchmark_calculate_grade_for_courses(self, courses, marking_period, date_report)
+
+            gpa = float(0)
+            credits = float(0)
+            for course in courses.distinct():
+                try:
+                    grade, credit = self._calculate_grade_for_single_course(course, marking_period, date_report)
+                    credits += credit
+                    gpa += float(grade) * credit
+                except:
+                    pass
+            #print 'credits: ', credits
+            if credits > 0:
+                gpa = Decimal(str(gpa/credits)).quantize(Decimal("0.01"), ROUND_HALF_UP)
+            else:
+                gpa = "N/A"
+            return gpa
+
+
+        def calculate_gpa(self, date_report=None):
+            """ Calculate students gpa
+            date_report: Date for calculation (which effects credit value) defaults to today
+            Note: self is student object"""
+            if date_report == None:
+                date_report = date.today()
+            courses = self.course_set.filter(graded=True, marking_period__show_reports=True).exclude(omitcoursegpa__student=self).exclude(marking_period__school_year__omityeargpa__student=self).distinct()
+            return self.__calculate_grade_for_courses(courses, date_report=date_report)
+
+        def calculate_gpa_year(self, year=None, date_report=None):
+            """ Calculate students gpa for one year
+            year: Defaults to active year.
+            date_report: Date for calculation (which effects credit value) defaults to today """
+            if not date_report:
+                date_report = date.today()
+            courses = self.course_set.filter(graded=True, marking_period__school_year=year)
+            x = self.__calculate_grade_for_courses(courses, date_report=date_report)
+            return x
+
+        def calculate_gpa_mp(self, marking_period):
+            """ Calculate students gpa for one marking periods
+            mp: Marking Periods to calculate for."""
+            courses = self.course_set.filter(graded=True, omitcoursegpa=None, marking_period=marking_period)
+            return self.__calculate_grade_for_courses(courses, marking_period=marking_period)
+
+        @property
+        def gpa(self):
+            """ returns current GPA including absolute latest grades """
+            if not self.cache_gpa:
+                gpa = self.calculate_gpa()
+                if gpa == "N/A":
+                    return gpa
+                else:
+                    self.cache_gpa = gpa
+                    self.save()
+            return self.cache_gpa
+
+
+
 
 
 

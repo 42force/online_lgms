@@ -57,12 +57,16 @@ INSTALLED_APPS = [
     # 'lgmsattendance.apps.LgmsattendanceConfig',
     # 'lgmsadmin.apps.LgmsadminConfig',
     'ajax_select',
-    
     'lgmsdiscipline.apps.LgmsdisciplineConfig',
     'rangefilter',
     'lgmsadmission.apps.LgmsadmissionConfig',
     'lgmscounsel',
     'ckeditor',
+    'lgmsbenchmarkgrade',
+    'lgmsbenchmarks',
+    'lgmsadmin',
+    'lgmsexam',
+
 
 ]
 
