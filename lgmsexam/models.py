@@ -17,8 +17,8 @@ class StandardTest(models.Model):
     cherry_pick_final = models.BooleanField("Cherry pick results to get total. Only use final scores.")
     show_on_reports = models.BooleanField(default=True)
 
-    def __unicode__(self):
-        return unicode(self.name)
+    def __str__(self):
+        return (self.name)
 
     def get_cherry_pick_total(self, student):
         """ Returns cherry

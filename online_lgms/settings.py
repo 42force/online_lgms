@@ -66,6 +66,8 @@ INSTALLED_APPS = [
     'lgmsbenchmarks',
     'lgmsadmin',
     'lgmsexam',
+    'custom_field',
+    'django_thumbs',
 
 
 ]
@@ -218,6 +220,9 @@ AJAX_LOOKUP_CHANNELS = {
 
     'student' : ('lgmssis.lookups', 'StudentLookup'),
     'discstudent' : ('lgmsdiscipline.lookups', 'StudentWithDisciplineLookup'),
+    'all_student' : ('lgmssis.lookups', 'AllStudentLookup'),
+    'course': {'model':'lgmsschedule.course', 'search_field':'full_name'},
+    'day': ('lgmsschedule.lookups','DayLookup'),
 }
 
 

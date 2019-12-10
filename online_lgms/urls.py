@@ -41,6 +41,10 @@ urlpatterns = [
     path('pages/', include('django.contrib.flatpages.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 
+    
+
+
+
 
     #path for applicants testing 
     
@@ -63,6 +67,9 @@ urlpatterns = [
 
     #for casa
     path('casa_inquiry/', lgmsadmission_views.casa_inquiry, name='casa_inquiry'),
+
+    path('casa_applyform/', lgmsadmission_views.casa_applyform, name='casa_applyform'),
+
     path('casa_inquiry/', lgmsadmission_views.casa_inquiry, name='casa_inquiry'),
     path('gradeschool_inquiry/', lgmsadmission_views.gradeschool_inquiry, name='gradeschool_inquiry'),
     path('hs_inquiry/', lgmsadmission_views.hs_inquiry, name='hs_inquiry'),
