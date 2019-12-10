@@ -66,7 +66,7 @@ django-thumbs==0.4
 django-treebeard==4.3
 django-widget-tweaks==1.4.3
 djangocms-admin-style==1.2.9
-djangorestframework==3.9.0
+djangorestframework==3.9.1
 djangorestframework-bulk==0.2.1
 docutils==0.12
 ebaysdk==2.1.5
