@@ -100,7 +100,7 @@ lazy-object-proxy==1.4.1
 ldap-groups==4.2.2
 ldap3==2.5.2
 libsass==0.16.0
-lxml==4.2.3
+lxml==4.6.2
 Mako==1.0.4
 Markdown==3.0.1
 MarkupSafe==0.23
