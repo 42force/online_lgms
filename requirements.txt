@@ -14,7 +14,7 @@ cryptography==2.4.1
 cycler==0.10.0
 Dajax==1.3
 decorator==4.4.0
-Django==2.1.7
+Django==2.2.24
 django-admin-export==2.0
 django-ajax-selects==1.7.1
 django-autocomplete-light==3.3.0
