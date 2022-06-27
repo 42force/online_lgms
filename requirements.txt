@@ -142,7 +142,7 @@ pytz==2016.7
 raven==6.10.0
 redis==2.10.6
 regex==2019.3.12
-reportlab==3.5.12
+reportlab==3.5.55
 requests==2.20.0
 rosetta==0.3
 scipy==1.2.1
