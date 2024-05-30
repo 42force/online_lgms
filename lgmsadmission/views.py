@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 
-from .forms import ContactUsForm, InquiryForm, CasaInquiryForm, GradeSchoolInquiryForm, HighSchoolInquiryForm, SpedInquiryForm, HomeStudyInquiryForm
+from .forms import ContactUsForm, InquiryForm, CasaInquiryForm, GradeSchoolInquiryForm, HighSchoolInquiryForm, SpedInquiryForm, HomeStudyInquiryForm, CasaApplicationForm, DocumentForm 
 from django.core.mail import EmailMessage
 
 from django.core.mail import send_mail
@@ -11,6 +11,9 @@ from django.conf import settings
 def thankyou_inquiry(request):
     return render(request, 'lgmsadmission/thankyouinquiry.html')
 
+
+def thankyou_upload(request):
+    return render(request, 'lgmsadmission/thankyouupload.html')
 
 #contact form
 def contact_us(request):
@@ -131,4 +134,40 @@ def sped_inquiry(request):
     return render(request, 'lgmsadmission/spedinquiry.html', {'spedinquiry_form' : spedinquiry_form})
 
 
+
+def casa_applyform(request):
+    if request.method == 'POST':
+        caapply_form = CasaApplicationForm(request.POST)
+        doc_form = DocumentForm(request.POST, request.FILES)
+        if caapply_form.is_valid() and doc_form.is_valid():
+            caapply_form.save()
+            doc_form.save()
+            mail_subject = 'Thank you for your Inquiry in our High School Programme'
+            message = 'Inquiry Received, we will be in touch shortly'
+            to_email = caapply_form.cleaned_data.get('email')
+            email = EmailMessage(mail_subject, message, to=[to_email])
+            email.send()
+            return redirect('thankyou_inquiry')
+    else:
+        caapply_form = CasaApplicationForm()
+        doc_form = DocumentForm()
+
+        context = {
+            'caapply_form' : caapply_form,
+            'doc_form' : doc_form
+        }
+    return render(request, 'lgmsadmission/casaapplication.html', context)
+
+
+def model_form_upload(request):
+    if request.method == 'POST':
+        doc_form = DocumentForm(request.POST, request.FILES)
+        if doc_form.is_valid():
+            doc_form.save()
+            return redirect('thankyou_upload')
+    else:
+        doc_form = DocumentForm()
+    return render(request, 'lgmsadmission/casaapplication.html', {
+        'doc_form': doc_form
+    })
 

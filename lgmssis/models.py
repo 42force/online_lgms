@@ -7,7 +7,11 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth.models import AbstractUser
 from datetime import date
 from django.db.models.signals import post_save, m2m_changed
+from django_thumbs.fields import ImageThumbsField
 
+from custom_field.custom_field import CustomFieldModel
+
+#from lgmsschedule.models import CourseEnrollment
 
 
 # Create your models here.
@@ -141,6 +145,7 @@ class FamilyAccessUser(User):
     """
     class Meta:
         proxy = True
+
     def save(self, *args, **kwargs):
         super(FamilyAccessUser, self).save(*args, **kwargs)
         self.groups.add(Group.objects.get_or_create(name='family')[0])
@@ -198,11 +203,19 @@ class ReasonLeft(models.Model):
         return str(self.reason)
 
 
-class Student(models.Model):
-        user_students = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
+class Student(User, CustomFieldModel):
+
+
+        SIZES = (
+            {'code': 'avatar', 'wxh': '125x125', 'resize': 'crop'},
+            {'code': 'm', 'wxh': '640x480', 'resize': 'scale'},
+            {'code': '150', 'wxh': '150x150'}, # 'resize' defaults to 'scale'
+            )
+        #user_students = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
         year = models.ForeignKey(GradeLevel, blank=True, null=True, on_delete=models.CASCADE)
         lrn_no = models.CharField('Learners Number', default="", max_length=64, blank=True)
         grad_date = models.DateField(blank=True, null=True)
+        pic = ImageThumbsField(default='default.jpg', upload_to="student_pics", blank=True, null=True, sizes=SIZES)
         sex = models.CharField(max_length=1, choices=(('M', 'Male'), ('F', 'Female')), blank=True, null=True)
         bday = models.DateField(blank=True, null=True, verbose_name="Birth Date")
         year = models.ForeignKey(GradeLevel, blank=True, null=True, on_delete=models.SET_NULL)
@@ -212,13 +225,18 @@ class Student(models.Model):
         unique_id = models.IntegerField(blank=True, null=True, unique=True, help_text="For integration with outside databases")
         parent_guardian = models.CharField(max_length=150, blank=True, editable=False)
         streetname = models.CharField(max_length=255, verbose_name="Street Name", blank=True, null=True)
-        zip = models.CharField(max_length=10, blank=True, editable=False)
-        parent_email = models.EmailField(blank=True, editable=False)
+        zip = models.CharField(max_length=10, blank=True, editable=True)
+        parent_email = models.EmailField(blank=True, editable=True)
         siblings = models.ManyToManyField('Student', blank=True)
         cohorts = models.ManyToManyField(Cohort, through='StudentCohort', blank=True)
         cache_cohort = models.ForeignKey(Cohort, editable=False, blank=True, null=True, on_delete=models.SET_NULL, help_text="Cached primary cohort.", related_name="cache_cohorts")
         #individual_education_program = models.BooleanField(help_text="Individual Program")
         cache_gpa = models.DecimalField(editable=False, max_digits=5, decimal_places=2, blank=True, null=True)
+
+        family_access_users = models.ManyToManyField('FamilyAccessUser', blank=True, related_name="family_access_user")
+        alt_email = models.EmailField(blank=True, help_text="Alternative student email that is not their school email.")
+        notes = models.TextField(blank=True)
+        ##family_access_users = models.ManyToManyField('User', blank=True)
 
 
         class Meta:
@@ -343,6 +361,31 @@ class Student(models.Model):
 
 
 
+class TranscriptNoteChoices(models.Model):
+    """Returns a predefined transcript note.
+    When displayed from "TranscriptNote":
+    Replaces $student with student name
+    Replaces $he_she with student's appropriate gender word.
+    """
+    note = models.TextField()
+    def __str__(self):
+        return __str__(self.note)
+
+class TranscriptNote(models.Model):
+    """ These are notes intended to be shown on a transcript. They may be either free
+    text or a predefined choice. If both are entered they will be concatenated.
+    """
+    note = models.TextField(blank=True)
+    predefined_note = models.ForeignKey(TranscriptNoteChoices, blank=True, null=True, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    def __unicode__(self):
+        note = unicode(self.predefined_note)
+        note = note.replace('$student', unicode(self.student))
+        note = note.replace('$he_she', self.student.he_she)
+        if self.note:
+            return unicode(self.note) + " " + unicode(note)
+        else:
+            return unicode(note)
 
 
 
@@ -430,8 +473,15 @@ class StudentCohort(models.Model):
             self.student.cache_cohort = self.cohort
             self.student.save()
 
-    
-#####
+
+
+# class Directory(models.Model):
+#     studentname = models.ForeignKey(Student, on_delete=models.CASCADE)
+#     address = models.CharField('Address of Student', max_length=64)
+#     parents = models.ForeignKey(User, on_delete=models.CASCADE)
+#     contact = models.PhoneNumberField()
+#     email = models.EmailField()
+# #####
 
 
 

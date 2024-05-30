@@ -51,7 +51,7 @@ class AllStudentLookup(StudentLookup):
         qs = Student.objects.all()
         for word in q.split():
             qs = qs.filter(Q(lname__icontains=word) | Q(fname__icontains=word))
-        return qs.order_by('lname')
+        return qs.order_by('last_name')
 
 class StudentLookupSmall(StudentLookup):
     def format_match(self,student):

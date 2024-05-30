@@ -77,9 +77,8 @@ INSTALLED_APPS = [
     'lgmsbenchmarks',
     'lgmsadmin',
     'lgmsexam',
-    'widget_tweaks',
-
-
+    'custom_field',
+    'django_thumbs',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -228,6 +227,9 @@ AJAX_LOOKUP_CHANNELS = {
 
     'student' : ('lgmssis.lookups', 'StudentLookup'),
     'discstudent' : ('lgmsdiscipline.lookups', 'StudentWithDisciplineLookup'),
+    'all_student' : ('lgmssis.lookups', 'AllStudentLookup'),
+    'course': {'model':'lgmsschedule.course', 'search_field':'full_name'},
+    'day': ('lgmsschedule.lookups','DayLookup'),
 }
 
 

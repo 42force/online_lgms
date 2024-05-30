@@ -69,7 +69,7 @@ class Application(models.Model):
         ('NEWS', 'NEWS')}
     
         howdidyouhear = models.CharField(verbose_name="How did you heard about us?",max_length=20, choices=heardoption, blank=True, default='FACEBOOK', help_text="How did you hear about us?")
-        
+        dateapply = models.DateField('Date of Application', default=date.today, editable=True)
         def __str__(self):
                 return f'{self.fname}'
         

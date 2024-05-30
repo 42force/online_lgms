@@ -68,7 +68,7 @@ class Grade(models.Model):
             self.letter_grade = None
             return True
         except:
-            grade = unicode.upper(unicode(grade)).strip()
+            grade = str.upper(str(grade)).strip()
             if grade in dict(self.letter_grade_choices):
                 self.letter_grade = grade
                 self.grade = None
