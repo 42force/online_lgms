@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+DEFAULT_HOST = '192.168.1.2'
+DEFAULT_PORT = '8005'
+
+HOST = os.environ.get('DJANGO_HOST', DEFAULT_HOST)
+PORT = os.environ.get('DJANGO_PORT', DEFAULT_PORT)
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,8 +31,12 @@ SECRET_KEY = 'mq-%3au71tv*w-((*ie%x^b-y3r@*-br$x6_8f)2)+!aoe-4um'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-          'www.learninggardenmontessori.ph',
+          'www.learninggardenmontesori.ph',
+          'learninggardenmontessori.ph',
+          '192.168.1.2',
+          'www.learninggardenmontessori.ph', 
           '127.0.0.1',
+          'localhost',
 		  '192.168.0.103',
 		  '122.3.47.190',
 ]
@@ -36,8 +46,8 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
 
-    'jet.dashboard',
-    'jet',
+    #'jet.dashboard',
+    #'jet',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -49,6 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'phonenumber_field',
     'crispy_forms',
+    'crispy_bootstrap4',
     'users.apps.UsersConfig',
     'lgmssis.apps.LgmssisConfig',
     'lgmsschedule.apps.LgmsscheduleConfig',
@@ -68,11 +79,9 @@ INSTALLED_APPS = [
     'lgmsexam',
     'custom_field',
     'django_thumbs',
-
-
 ]
 
-CRISPY_TEMPLATE_PACK = 'uni_form'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 SITE_ID = 1
 
@@ -91,7 +100,7 @@ MIDDLEWARE = [
 # X_FRAME_OPTIONS = 'DENY'
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # SESSION_COOKIE_SECURE = True
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 # SECURE_BROWSER_XSS_FILTER = True
 # SECURE_CONTENT_TYPE_NOSNIFF = True
 
@@ -131,15 +140,13 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'lgmsschool',
         'USER': 'testroot',
         'PASSWORD': 'testroot',
-		'OPTIONS': {
-    	'sql_mode': 'STRICT_TRANS_TABLES',},
 		#'https://console.cloud.google.com/sql/instances'
         #'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        #'PORT': '3306',
+        'PORT': '3306',
     }
 }
 
@@ -224,7 +231,6 @@ AJAX_LOOKUP_CHANNELS = {
     'course': {'model':'lgmsschedule.course', 'search_field':'full_name'},
     'day': ('lgmsschedule.lookups','DayLookup'),
 }
-
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

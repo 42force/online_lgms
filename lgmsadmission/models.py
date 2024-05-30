@@ -84,8 +84,8 @@ class Inquiry(models.Model):
     phonenumber = PhoneNumberField('Mobile Number',help_text='MOBILE FORMAT : +639178888888', blank=True)
     email = models.EmailField('Email Address',unique=True, null=True, blank=True)
     programme = models.CharField(max_length=255, verbose_name="Course or Programme", blank=True, null=True)
+    #date = models.DateField()
     dateinquiry = models.DateField('Date of Inquiry', default=date.today, editable=False)
-
     def __str__(self):
                 return f'{self.firstname}'
 

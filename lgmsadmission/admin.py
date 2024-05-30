@@ -15,7 +15,7 @@ class ContactUsAdmin(admin.ModelAdmin):
 
 
 class InquiryAdmin(admin.ModelAdmin):
-    list_display = ['id','firstname', 'phonenumber', 'email', 'programme']
+    list_display = ['id','firstname', 'phonenumber', 'email', 'programme', 'date']
     ordering = ['id','email', 'programme']
 
 

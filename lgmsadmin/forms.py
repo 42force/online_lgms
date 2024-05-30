@@ -9,7 +9,7 @@ from django.contrib.admin import widgets as adminwidgets
 from django.utils.safestring import mark_safe
 # from django.utils.encoding import force_unicode
 from django.utils.html import conditional_escape
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 
 from django.conf import settings

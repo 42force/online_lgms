@@ -33,8 +33,8 @@ urlpatterns = [
     # place it at whatever base url you like
     path('ajax_select/', include(ajax_select_urls)),
 
-    path('jet/', include('jet.urls', 'jet')),
-    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
+    # path('jet/', include('jet.urls', 'jet')),
+    # path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
     path('lgmssis/', include('lgmssis.urls')),
     path('', RedirectView.as_view(url='/lgmssis/', permanent=True)),
