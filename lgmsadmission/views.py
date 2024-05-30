@@ -46,6 +46,7 @@ def inquiry_us(request):
     return render(request, 'lgmsadmission/casainquiry.html', {'inquiry_form' : inquiry_form})
 
 
+
 def casa_inquiry(request):
     if request.method == 'POST':
         casainquiry_form = CasaInquiryForm(request.POST)
